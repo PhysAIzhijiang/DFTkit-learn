@@ -6,6 +6,15 @@ language support: **Chinese only**
 
 ## Available packages
 
-- ABACUS (doing)
-- FHI-aims (ongoing)
+### DeepModeling (doing)
+    - [ABACUS](./ABACUS/README.md) (doing)
+    - DeepH (ongoing)
+  
+### FHI-aims (ongoing)
+
+### Quantum ESPRESSO (planning)
+
+### Wannier90 (planning)
+
+### VASP (planning)
 
