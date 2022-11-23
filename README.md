@@ -7,8 +7,9 @@ language support: **Chinese only**
 ## Available packages
 
 ### DeepModeling (doing)
-    - [ABACUS](./ABACUS/README.md) (doing)
-    - DeepH (ongoing)
+
+- [ABACUS](./ABACUS/README.md) (doing)
+- DeepH (ongoing)
   
 ### FHI-aims (ongoing)
 
