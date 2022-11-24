@@ -17,6 +17,7 @@ ABACUS (Atomic-orbital Based Ab-initio Computation at UStc) is an open-source co
 - 教程: 缺失
 - psudo-potential和轨道文件: http://abacus.ustc.edu.cn/pseudo/list.htm
 - 例子: 在源代码下面`example`下可以获取
+- 开发者教程: 没有
 
 ## 本仓库资源
 

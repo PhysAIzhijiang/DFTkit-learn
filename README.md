@@ -11,7 +11,8 @@ language support: **Chinese only**
 - [ABACUS](./ABACUS/README.md) (doing)
 - DeepH (ongoing)
   
-### FHI-aims (ongoing)
+### NOMAD@FHI
+- [FHI-aims ](./FHI-aims/README.md)
 
 ### Quantum ESPRESSO (planning)
 
