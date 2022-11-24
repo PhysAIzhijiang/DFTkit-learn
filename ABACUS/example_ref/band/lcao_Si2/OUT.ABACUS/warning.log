@@ -1,0 +1,13 @@
+ AUTO_SET ks_solver to genelpa
+ Input  warning : gamma_only_local algorithm is not used.
+ AUTO_SET lcao_ecut to 50
+ smearing_decision  warning : Fixed occupations,gauss broadening ignored
+ AUTO_SET gaussian_parameter to 0
+ In SCAN_BEGIN, can't find: LATTICE_PARAMETERS block.
+ AUTO_SET NBANDS to 8
+ Error : nkstot == -1, not implemented yet.
+                 charge before normalized = 8.00000000000023
+                  charge after normalized = 8.00000000000001
+      Processor           Atom
+              1             26
+              2             26

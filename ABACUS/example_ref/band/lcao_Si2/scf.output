@@ -1,0 +1,68 @@
+ *********************************************************
+ *                                                       *
+ *                  WELCOME TO ABACUS v3.0               *
+ *                                                       *
+ *            'Atomic-orbital Based Ab-initio            *
+ *                  Computation at UStc'                 *
+ *                                                       *
+ *          Website: http://abacus.ustc.edu.cn/          *
+ *                                                       *
+ *********************************************************
+ Fri Nov 18 10:16:34 2022
+ MAKE THE DIR         : OUT.ABACUS/
+ UNIFORM GRID DIM     : 36 * 36 * 36
+ UNIFORM GRID DIM(BIG): 18 * 18 * 18
+ DONE(0.0760406  SEC) : SETUP UNITCELL
+ DONE(0.0777741  SEC) : INIT K-POINTS
+ ---------------------------------------------------------
+ Self-consistent calculations for electrons
+ ---------------------------------------------------------
+ SPIN    KPOINTS         PROCESSORS  NBASE       
+ 1       36              2           26          
+ ---------------------------------------------------------
+ Use Systematically Improvable Atomic bases
+ ---------------------------------------------------------
+ ELEMENT ORBITALS        NBASE       NATOM       XC          
+ Si      2s2p1d-8au      13          2           
+ ---------------------------------------------------------
+ Initial plane wave basis and FFT box
+ ---------------------------------------------------------
+ DONE(0.383012   SEC) : INIT CHARGE
+ START CHARGE      : atomic
+ DONE(0.387811   SEC) : INIT POTENTIAL
+ -------------------------------------------
+ SELF-CONSISTENT : 
+ -------------------------------------------
+ ITER   ETOT(eV)       EDIFF(eV)      DRHO       TIME(s)    
+ GE1    -2.138667e+02  0.000000e+00   1.652e-01  6.973e-01  
+ GE2    -2.139153e+02  -4.859216e-02  3.480e-02  5.483e-01  
+ GE3    -2.139161e+02  -8.407097e-04  4.131e-03  5.524e-01  
+ GE4    -2.139161e+02  -1.051285e-05  4.859e-05  5.281e-01  
+ GE5    -2.139161e+02  2.951147e-08   6.059e-06  5.322e-01  
+ GE6    -2.139161e+02  -3.888651e-09  1.608e-07  5.137e-01  
+ GE7    -2.139161e+02  1.068493e-10   7.737e-10  5.147e-01  
+
+  |CLASS_NAME---------|NAME---------------|TIME(Sec)-----|CALLS----|AVG------|PER%-------
+                       total               4.4575         9         0.5       1e+02     %
+   Driver              driver_line         4.4247         1         4.4       99        %
+   ORB_control         set_orb_tables      0.26084        1         0.26      5.9       %
+   ORB_gen_tables      gen_tables          0.26083        1         0.26      5.9       %
+   ESolver_KS_LCAO     Run                 4.059          1         4.1       91        %
+   HSolverLCAO         solve               3.2152         7         0.46      72        %
+   HamiltLCAO          updateHk            2.1913         252       0.0087    49        %
+   OperatorLCAO        init                2.1905         756       0.0029    49        %
+   Veff                contributeHk        1.5184         252       0.006     34        %
+   Gint_interface      cal_gint            2.054          14        0.15      46        %
+   Nonlocal<OperatorLCAO>contributeHR        0.13135        1         0.13      2.9       %
+   LCAO_gen_fixedH     build_Nonlocal_mu_new0.13126        1         0.13      2.9       %
+   OperatorLCAO        folding_fixed       0.5254         252       0.0021    12        %
+   LCAO_nnr            folding_fixedH      0.52461        252       0.0021    12        %
+   HSolverLCAO         hamiltSolvePsiK     0.33183        252       0.0013    7.4       %
+   DiagoElpa           elpa_solve          0.27384        252       0.0011    6.1       %
+   ElecStateLCAO       psiToRho            0.69087        7         0.099     15        %
+ ----------------------------------------------------------------------------------------
+
+ START  Time  : Fri Nov 18 10:16:34 2022
+ FINISH Time  : Fri Nov 18 10:16:39 2022
+ TOTAL  Time  : 5
+ SEE INFORMATION IN : OUT.ABACUS/

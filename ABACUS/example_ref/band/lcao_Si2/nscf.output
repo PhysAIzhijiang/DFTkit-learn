@@ -1,0 +1,59 @@
+ *********************************************************
+ *                                                       *
+ *                  WELCOME TO ABACUS v3.0               *
+ *                                                       *
+ *            'Atomic-orbital Based Ab-initio            *
+ *                  Computation at UStc'                 *
+ *                                                       *
+ *          Website: http://abacus.ustc.edu.cn/          *
+ *                                                       *
+ *********************************************************
+ Fri Nov 18 10:16:41 2022
+ MAKE THE DIR         : OUT.ABACUS/
+ UNIFORM GRID DIM     : 36 * 36 * 36
+ UNIFORM GRID DIM(BIG): 18 * 18 * 18
+ DONE(0.0794975  SEC) : SETUP UNITCELL
+ DONE(0.0829198  SEC) : INIT K-POINTS
+ ---------------------------------------------------------
+ ---------------------------------------------------------
+ SPIN    KPOINTS         PROCESSORS  NBASE       
+ 1       101             2           26          
+ ---------------------------------------------------------
+ Use Systematically Improvable Atomic bases
+ ---------------------------------------------------------
+ ELEMENT ORBITALS        NBASE       NATOM       XC          
+ Si      2s2p1d-8au      13          2           
+ ---------------------------------------------------------
+ Initial plane wave basis and FFT box
+ ---------------------------------------------------------
+ DONE(0.39922    SEC) : INIT CHARGE
+ START CHARGE      : file
+ DONE(0.421244   SEC) : INIT POTENTIAL
+ -------------------------------------------
+ NONSELF-CONSISTENT : 
+ -------------------------------------------
+ NON-SELF CONSISTENT CALCULATIONS
+
+  |CLASS_NAME---------|NAME---------------|TIME(Sec)-----|CALLS----|AVG------|PER%-------
+                       total               1.8558         9         0.21      1e+02     %
+   Driver              driver_line         1.8208         1         1.8       98        %
+   ORB_control         set_orb_tables      0.26911        1         0.27      15        %
+   ORB_gen_tables      gen_tables          0.2691         1         0.27      15        %
+   ESolver_KS_LCAO     othercalculation    0.72315        1         0.72      39        %
+   HSolverLCAO         solve               0.69007        1         0.69      37        %
+   HamiltLCAO          updateHk            0.56324        101       0.0056    30        %
+   OperatorLCAO        init                0.56297        303       0.0019    30        %
+   Veff                contributeHk        0.20001        101       0.002     11        %
+   Gint_interface      cal_gint            0.1714         1         0.17      9.2       %
+   Nonlocal<OperatorLCAO>contributeHR        0.13736        1         0.14      7.4       %
+   LCAO_gen_fixedH     build_Nonlocal_mu_new0.13728        1         0.14      7.4       %
+   OperatorLCAO        folding_fixed       0.21044        101       0.0021    11        %
+   LCAO_nnr            folding_fixedH      0.21016        101       0.0021    11        %
+   HSolverLCAO         hamiltSolvePsiK     0.12638        101       0.0013    6.8       %
+   DiagoElpa           elpa_solve          0.10602        101       0.001     5.7       %
+ ----------------------------------------------------------------------------------------
+
+ START  Time  : Fri Nov 18 10:16:41 2022
+ FINISH Time  : Fri Nov 18 10:16:42 2022
+ TOTAL  Time  : 1
+ SEE INFORMATION IN : OUT.ABACUS/
