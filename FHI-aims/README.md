@@ -23,6 +23,8 @@ FHI-aims (Fritz Haber Institute ab initio materials simulations) is a software p
   - 有视频
   - 有例子
 - 开发者教程: 没有
+- 工具包: 
+  - 图形界面: 有, 但是不好用 [>>链接<<](https://gims.ms1p.org/static/index.html)
 
 ## 本仓库资源
 

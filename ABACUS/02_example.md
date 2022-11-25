@@ -50,7 +50,7 @@ ABACUS_THREADS=4
 ### 使用队列管理系统 (集群)
 *这里使用Slurm作为例子*
 
-下面为`Slurm`提交ABACUS的脚本`run.slurm`模板. 
+下面为`Slurm`提交ABACUS的脚本模板. 该文件在`DFTkit-learn路径/ABACUS/src/run_abacus.slurm`.
 
 ``` bash
 #!/bin/bash -l
@@ -233,13 +233,13 @@ to calculate a series of specified k points.
 
 Finish! Then you can see BANDS_1.dat in OUT.ABACUS. Plot it!
 
-#### 运行
+#### 运行 (讲解)
 
 - 复制官方输入
   
     ``` bash
     # 切换到项目主目录
-    $ cd DFTkit-learn/ABACUS/;
+    $ cd DFTkit-learn路径/ABACUS/;
     # 创建目录
     $ mkdir -p ./run_example/band;
     # 删除例子
@@ -281,21 +281,26 @@ Finish! Then you can see BANDS_1.dat in OUT.ABACUS. Plot it!
     $ ./run.sh
     ```
 
-- (集群) 将前文提到的`run.slurm`模板复制过来, 并把脚本中`# srun .....`替换为
+- (在集群)运行 
+    - 复制提交脚本.
+        ``` bash
+        $ cp DFTkit-learn路径/src/run_abacus.slurm run.slurm
+        ```
+  
+    - 用文本编辑器打开`run.slurm`, 并把脚本中`# srun .....`的内容替换为
+        ``` bash
+        cp INPUT1 INPUT
+        srun ${ABACUS_PATH} > scf.output
+        cp INPUT2 INPUT
+        srun ${ABACUS_PATH} > nscf.output
 
-    ``` bash
-    cp INPUT1 INPUT
-    srun ${ABACUS_PATH} > scf.output
-    cp INPUT2 INPUT
-    srun ${ABACUS_PATH} > nscf.output
+        rm INPUT
+        ```
 
-    rm INPUT
-    ```
-
-    运行
-    ``` bash
-    $ sbatch run.slurm
-    ```
+    - 运行
+        ``` bash
+        $ sbatch run.slurm
+        ```
 
 #### 结果分析
 - 程序一共运行了两次, 第一次是对系统进行DFT自洽迭代计算基态信息(密度, 能量等)
