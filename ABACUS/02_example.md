@@ -36,7 +36,8 @@ $ mpirun -np 2 ABACUS.mpi
 将会使用2x4=8个核.
 
 这里提供一个脚本模板`run.sh`
-​``` bash
+
+``` bash
 #!/bin/bash
 
 ABACUS_PATH=$ABACUSROOT/bin/ABACUS.mpi
@@ -246,7 +247,7 @@ Finish! Then you can see BANDS_1.dat in OUT.ABACUS. Plot it!
     # 复制
     $ cp -r $ABACUSROOT/examples/band/lcao_Si2 ./run_example/band/;
     # 切换到目录下
-    $ cd ./run_example/band/;
+    $ cd ./run_example/band/lcao_Si2;
     $ ls -al
     drwxrwxr-x 2 xxx xxx 4096 Xxx xx xx:xx .
     drwxrwxr-x 3 xxx xxx 4096 Xxx xx xx:xx ..
