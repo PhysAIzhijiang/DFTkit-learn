@@ -171,7 +171,7 @@ ABACUS_PATH=$ABACUSROOT/bin/ABACUS.mpi
 $ sbatch run.slurm
 ```
 *注意*, 
-- 脚本里出现的`#SBATCH -p debug`和`#SBATCH -q short`的`debug`和`short`要和集群管理原确认节点名称后自行修改.
+- 脚本里出现的`#SBATCH -p debug`和`#SBATCH -q short`的`debug`和`short`要和集群管理员确认节点名称后自行修改.
 - 要将`# srun .....`替换为最终要执行的指令, 后面的例子会给出具体指令.
 
 
