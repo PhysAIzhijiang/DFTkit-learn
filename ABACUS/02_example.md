@@ -143,6 +143,7 @@ export MKL_NUM_THREADS=$omp_threads
 
 #|=======================================
 #| start to run your job
+#| rm Slurm-* will delete any existing output files like "slurm-3074.out", which comes from previous trial test
 #|---------------------------------------
 rm Slurm-*
 
