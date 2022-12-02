@@ -9,7 +9,7 @@ language support: **Chinese only**
 ### DeepModeling (doing)
 
 - [ABACUS](./ABACUS/README.md) (doing)
-- DeepH (ongoing)
+- [DeepH](./DeepH/README.md) (doing)
   
 ### NOMAD@FHI
 - [FHI-aims ](./FHI-aims/README.md)

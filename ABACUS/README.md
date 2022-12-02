@@ -24,4 +24,4 @@ ABACUS (Atomic-orbital Based Ab-initio Computation at UStc) is an open-source co
 ## 本仓库资源
 
 - [安装说明](./01_install.md)
-- [例子](./02_example.md)
+- [运行指南与例子](./02_example.md)
