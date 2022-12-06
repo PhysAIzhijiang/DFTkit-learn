@@ -44,7 +44,7 @@
 #|---------------------------------------
 #|- PARTITION & time limit
 #|- use `sinfo` to list PARTITION & TIMELIMIT
-#SBATCH -p debug
+#SBATCH -p small
 #|- Quality
 #SBATCH -q short
 ## time format day-hour:minute:second
@@ -89,7 +89,8 @@ export MKL_NUM_THREADS=$omp_threads
 #|=======================================
 #| start to run your job
 #|---------------------------------------
-rm Slurm-*
+rm Slurm-* ;
+rm slurm-* ;
 
 #|=======================================
 # run ABAUCUS HERE

@@ -2,7 +2,7 @@
 
 | 创建     | bsplu | 2022.11.25 |
 |----------|-------|------------|
-| 最后修改 | bsplu | 2022.12.02 |
+| 最后修改 | bsplu | 2022.12.06 |
 
 **简介**: 用`lcao`基组计算Si2的能带. 
 **官方路径**: `$ABACUSROOT/examples/band/lcao_Si2`
@@ -98,8 +98,10 @@ Finish! Then you can see BANDS_1.dat in OUT.ABACUS. Plot it!
         ```
 
 ## 结果分析
-- 程序一共运行了两次, 第一次是对系统进行DFT自洽迭代计算基态信息(密度, 能量等)
+- 程序一共运行了两次, 第一次是对Si2系统进行DFT自洽迭代计算基态信息(密度, 能量等)
+  ![](./Si2.png)
 - 第二次运行, 根据`KLINES`提供的`k`路径计算能带, 并把每条路径上的能带输入到`OUT.ABACUS/BANDS_1.dat`中.
+  
   
 在`OUT.ABACUS/running_scf.log`中可以找到费米能的信息:`EFERMI = 6.585653952033698 eV`.
 
@@ -121,8 +123,7 @@ Line
 ` x为`nbands`设置的数量.
 
 将`BANDS_1.dat`放到画图软件里就可以得到能带.
-
-![](./example_ref/band/lcao_Si2/OUT.ABACUS/band.png)
+![](./OUT.ABACUS/band.png)
 
 从图里可以得到计算的能带为`7.155004-6.585653952033698=0.5693500479663021 eV`, 实验值能带为`1.17 eV`. 
 
