@@ -1,0 +1,74 @@
+ *********************************************************
+ *                                                       *
+ *                  WELCOME TO ABACUS v3.0               *
+ *                                                       *
+ *            'Atomic-orbital Based Ab-initio            *
+ *                  Computation at UStc'                 *
+ *                                                       *
+ *          Website: http://abacus.ustc.edu.cn/          *
+ *                                                       *
+ *********************************************************
+ Tue Dec  6 09:51:51 2022
+ MAKE THE DIR         : OUT.ABACUS/
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ Warning: number valence electrons > 4 for Pb: [Xe] 4f14 5d10 6s2 6p2
+ Warning: number valence electrons > 4 for Ti: [Ar] 3d2 4s2
+ Please make sure the pseudopotential file is what you need
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ UNIFORM GRID DIM     : 36 * 36 * 48
+ UNIFORM GRID DIM(BIG): 18 * 18 * 24
+ DONE(0.0944426  SEC) : SETUP UNITCELL
+ DONE(0.0977555  SEC) : INIT K-POINTS
+ ---------------------------------------------------------
+ ---------------------------------------------------------
+ SPIN    KPOINTS         PROCESSORS  NBASE       
+ 1       128             2           84          
+ ---------------------------------------------------------
+ Use Systematically Improvable Atomic bases
+ ---------------------------------------------------------
+ ELEMENT ORBITALS        NBASE       NATOM       XC          
+ Pb      2s2p2d-10au     18          1           
+ Ti      4s2p2d1f-10au   27          1           
+ O       2s2p1d-10au     13          3           
+ ---------------------------------------------------------
+ Initial plane wave basis and FFT box
+ ---------------------------------------------------------
+ DONE(4.57895    SEC) : INIT CHARGE
+ START CHARGE      : file
+ DONE(4.62541    SEC) : INIT POTENTIAL
+ -------------------------------------------
+ NONSELF-CONSISTENT : 
+ -------------------------------------------
+ NON-SELF CONSISTENT CALCULATIONS
+
+  |CLASS_NAME---------|NAME---------------|TIME(Sec)-----|CALLS----|AVG------|PER%-------
+                       total               16.563         9         1.8       1e+02     %
+   Driver              driver_line         16.532         1         17        1e+02     %
+   NOrbital_Lm         extra_uniform       0.31007        661       0.00047   1.9       %
+   ORB_control         set_orb_tables      4.3598         1         4.4       26        %
+   ORB_gen_tables      gen_tables          4.3598         1         4.4       26        %
+   ORB_table_phi       init_Table          1.5707         1         1.6       9.5       %
+   ORB_table_phi       cal_ST_Phi12_R      4.9192         2405      0.002     30        %
+   ORB_table_beta      init_Table_Beta     2.6214         1         2.6       16        %
+   ORB_table_beta      VNL_PhiBeta_R       2.5869         542       0.0048    16        %
+   ESolver_KS_LCAO     othercalculation    11.933         1         12        72        %
+   HSolverLCAO         solve               5.7785         1         5.8       35        %
+   HamiltLCAO          updateHk            5.0982         128       0.04      31        %
+   OperatorLCAO        init                5.0978         384       0.013     31        %
+   Veff                contributeHk        2.2978         128       0.018     14        %
+   Gint_interface      cal_gint            2.1344         1         2.1       13        %
+   Gint_k              folding_vl_k        0.13894        128       0.0011    0.84      %
+   Nonlocal<OperatorLCAO>contributeHR        1.1535         1         1.2       7         %
+   LCAO_gen_fixedH     build_Nonlocal_mu_new1.1532         1         1.2       7         %
+   OperatorLCAO        folding_fixed       1.4539         128       0.011     8.8       %
+   LCAO_nnr            folding_fixedH      1.4506         128       0.011     8.8       %
+   HSolverLCAO         hamiltSolvePsiK     0.67312        128       0.0053    4.1       %
+   DiagoElpa           elpa_solve          0.62758        128       0.0049    3.8       %
+ ----------------------------------------------------------------------------------------
+
+ START  Time  : Tue Dec  6 09:51:51 2022
+ FINISH Time  : Tue Dec  6 09:52:08 2022
+ TOTAL  Time  : 17
+ SEE INFORMATION IN : OUT.ABACUS/

@@ -1,0 +1,96 @@
+ *********************************************************
+ *                                                       *
+ *                  WELCOME TO ABACUS v3.0               *
+ *                                                       *
+ *            'Atomic-orbital Based Ab-initio            *
+ *                  Computation at UStc'                 *
+ *                                                       *
+ *          Website: http://abacus.ustc.edu.cn/          *
+ *                                                       *
+ *********************************************************
+ Tue Dec  6 09:50:46 2022
+ MAKE THE DIR         : OUT.ABACUS/
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ Warning: number valence electrons > 4 for Pb: [Xe] 4f14 5d10 6s2 6p2
+ Warning: number valence electrons > 4 for Ti: [Ar] 3d2 4s2
+ Please make sure the pseudopotential file is what you need
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ UNIFORM GRID DIM     : 36 * 36 * 48
+ UNIFORM GRID DIM(BIG): 18 * 18 * 24
+ DONE(0.0833482  SEC) : SETUP UNITCELL
+ DONE(0.0863907  SEC) : INIT K-POINTS
+ ---------------------------------------------------------
+ Self-consistent calculations for electrons
+ ---------------------------------------------------------
+ SPIN    KPOINTS         PROCESSORS  NBASE       
+ 1       36              2           84          
+ ---------------------------------------------------------
+ Use Systematically Improvable Atomic bases
+ ---------------------------------------------------------
+ ELEMENT ORBITALS        NBASE       NATOM       XC          
+ Pb      2s2p2d-10au     18          1           
+ Ti      4s2p2d1f-10au   27          1           
+ O       2s2p1d-10au     13          3           
+ ---------------------------------------------------------
+ Initial plane wave basis and FFT box
+ ---------------------------------------------------------
+ DONE(3.72587    SEC) : INIT CHARGE
+ START CHARGE      : atomic
+ DONE(3.75701    SEC) : INIT POTENTIAL
+ -------------------------------------------
+ SELF-CONSISTENT : 
+ -------------------------------------------
+ ITER   ETOT(eV)       EDIFF(eV)      DRHO       TIME(s)    
+ GE1    -4.400910e+03  0.000000e+00   1.508e-01  4.992e+00  
+ GE2    -4.360419e+03  4.049177e+01   3.438e-01  4.034e+00  
+ GE3    -4.416577e+03  -5.615890e+01  7.057e-02  3.727e+00  
+ GE4    -4.416671e+03  -9.332950e-02  4.103e-02  3.685e+00  
+ GE5    -4.416096e+03  5.751769e-01   3.004e-02  3.789e+00  
+ GE6    -4.416282e+03  -1.864685e-01  8.313e-03  3.685e+00  
+ GE7    -4.416314e+03  -3.242044e-02  3.190e-03  3.674e+00  
+ GE8    -4.416315e+03  -5.231340e-04  1.544e-03  3.701e+00  
+ GE9    -4.416315e+03  -2.047731e-04  5.475e-04  3.761e+00  
+ GE10   -4.416315e+03  -3.833930e-05  1.499e-04  3.752e+00  
+ GE11   -4.416315e+03  -1.969116e-06  3.534e-05  3.929e+00  
+ GE12   -4.416315e+03  9.353107e-07   7.718e-06  4.136e+00  
+ GE13   -4.416315e+03  -3.115472e-07  2.545e-06  4.211e+00  
+ GE14   -4.416315e+03  8.271453e-08   1.191e-07  4.142e+00  
+ GE15   -4.416315e+03  2.498837e-09   3.301e-08  4.127e+00  
+
+  |CLASS_NAME---------|NAME---------------|TIME(Sec)-----|CALLS----|AVG------|PER%-------
+                       total               63.301         9         7         1e+02     %
+   Driver              driver_line         63.259         1         63        1e+02     %
+   ORB_control         set_orb_tables      3.3916         1         3.4       5.4       %
+   ORB_gen_tables      gen_tables          3.3916         1         3.4       5.4       %
+   ORB_table_phi       init_Table          1.1817         1         1.2       1.9       %
+   ORB_table_phi       cal_ST_Phi12_R      1.1174         788       0.0014    1.8       %
+   ORB_table_beta      init_Table_Beta     2.0588         1         2.1       3.3       %
+   ORB_table_beta      VNL_PhiBeta_R       2.0299         542       0.0037    3.2       %
+   Potential           v_of_rho            0.17592        16        0.011     0.28      %
+   XC_Functional       v_xc                0.16242        16        0.01      0.26      %
+   ESolver_KS_LCAO     Run                 59.522         1         60        94        %
+   HSolverLCAO         solve               57.471         15        3.8       91        %
+   HamiltLCAO          updateHk            39.748         540       0.074     63        %
+   OperatorLCAO        init                39.746         1620      0.025     63        %
+   Veff                contributeHk        32.04          540       0.059     51        %
+   Gint_interface      cal_gint            42.622         30        1.4       67        %
+   Gint_k              folding_vl_k        0.64041        540       0.0012    1         %
+   Gint_k              Distri              0.17587        540       0.00033   0.28      %
+   Nonlocal<OperatorLCAO>contributeHR        1.183          1         1.2       1.9       %
+   LCAO_gen_fixedH     build_Nonlocal_mu_new1.1827         1         1.2       1.9       %
+   OperatorLCAO        folding_fixed       6.337          540       0.012     10        %
+   LCAO_nnr            folding_fixedH      6.3256         540       0.012     10        %
+   HSolverLCAO         hamiltSolvePsiK     3.02           540       0.0056    4.8       %
+   DiagoElpa           elpa_solve          2.8589         540       0.0053    4.5       %
+   ElecStateLCAO       psiToRho            14.701         15        0.98      23        %
+   elecstate           cal_dm              0.22089        15        0.015     0.35      %
+   psiMulPsiMpi        pdgemm              0.21265        540       0.00039   0.34      %
+   LCAO_Charge         cal_dk_k            3.116          15        0.21      4.9       %
+ ----------------------------------------------------------------------------------------
+
+ START  Time  : Tue Dec  6 09:50:46 2022
+ FINISH Time  : Tue Dec  6 09:51:50 2022
+ TOTAL  Time  : 64
+ SEE INFORMATION IN : OUT.ABACUS/

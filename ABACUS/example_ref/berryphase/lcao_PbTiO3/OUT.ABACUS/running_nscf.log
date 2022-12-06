@@ -1,0 +1,5203 @@
+                                                                                     
+                             WELCOME TO ABACUS v3.0                                  
+                                                                                     
+               'Atomic-orbital Based Ab-initio Computation at UStc'                  
+                                                                                     
+                     Website: http://abacus.ustc.edu.cn/                             
+                                                                                     
+    Version: Parallel, in development
+    Processor Number is 2
+    Start Time is Tue Dec  6 09:51:51 2022
+                                                                                     
+ ------------------------------------------------------------------------------------
+
+ READING GENERAL INFORMATION
+                           global_out_dir = OUT.ABACUS/
+                           global_in_card = INPUT
+                               pseudo_dir = 
+                              orbital_dir = 
+                                    DRANK = 1
+                                    DSIZE = 2
+                                   DCOLOR = 1
+                                    GRANK = 1
+                                    GSIZE = 1
+ The esolver type has been set to : ksdft_lcao
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ |                                                                    |
+ | Reading atom information in unitcell:                              |
+ | From the input file and the structure file we know the number of   |
+ | different elments in this unitcell, then we list the detail        |
+ | information for each element, especially the zeta and polar atomic |
+ | orbital number for each element. The total atom number is counted. |
+ | We calculate the nearest atom distance for each atom and show the  |
+ | Cartesian and Direct coordinates for each atom. We list the file   |
+ | address for atomic orbitals. The volume and the lattice vectors    |
+ | in real and reciprocal space is also shown.                        |
+ |                                                                    |
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+ READING UNITCELL INFORMATION
+                                    ntype = 3
+                 atom label for species 1 = Pb
+                 atom label for species 2 = Ti
+                 atom label for species 3 = O
+                  lattice constant (Bohr) = 1.88973
+              lattice constant (Angstrom) = 1
+
+ READING ATOM TYPE 1
+                               atom label = Pb
+                      L=0, number of zeta = 2
+                      L=1, number of zeta = 2
+                      L=2, number of zeta = 2
+             number of atom for this type = 1
+                      start magnetization = FALSE
+
+ READING ATOM TYPE 2
+                               atom label = Ti
+                      L=0, number of zeta = 4
+                      L=1, number of zeta = 2
+                      L=2, number of zeta = 2
+                      L=3, number of zeta = 1
+             number of atom for this type = 1
+                      start magnetization = FALSE
+
+ READING ATOM TYPE 3
+                               atom label = O
+                      L=0, number of zeta = 2
+                      L=1, number of zeta = 2
+                      L=2, number of zeta = 1
+             number of atom for this type = 3
+                      start magnetization = FALSE
+                      start magnetization = FALSE
+                      start magnetization = FALSE
+
+                        TOTAL ATOM NUMBER = 5
+
+ DIRECT COORDINATES
+         atom                   x                   y                   z                 mag                  vx                  vy                  vz
+     taud_Pb1                   0                   0                   0                   0                   0                   0                   0
+     taud_Ti1                 0.5                 0.5               0.556                   0                   0                   0                   0
+      taud_O1                 0.5                 0.5               0.195                   0                   0                   0                   0
+      taud_O2                   0                 0.5               0.671                   0                   0                   0                   0
+      taud_O3                 0.5                   0               0.671                   0                   0                   0                   0
+
+
+ READING ORBITAL FILE NAMES FOR LCAO
+ orbital file: /sharedata01/apps/abacus/3.0.1/tests/PP_ORB/./Pb_gga_10au_100Ry_2s2p2d.orb
+ orbital file: /sharedata01/apps/abacus/3.0.1/tests/PP_ORB/./Ti_gga_10au_100Ry_4s2p2d1f.orb
+ orbital file: /sharedata01/apps/abacus/3.0.1/tests/PP_ORB/./O_gga_10au_100Ry_2s2p1d.orb
+
+                          Volume (Bohr^3) = 475.602
+                             Volume (A^3) = 70.4768
+
+ Lattice vectors: (Cartesian coordinate: in unit of a_0)
+               +3.837                  +0                  +0
+                   +0              +3.837                  +0
+                   +0                  +0              +4.787
+ Reciprocal vectors: (Cartesian coordinate: in unit of 2 pi/a_0)
+             +0.26062                  +0                  +0
+                   +0            +0.26062                  +0
+                   +0                  -0           +0.208899
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ |                                                                    |
+ | Reading pseudopotentials files:                                    |
+ | The pseudopotential file is in UPF format. The 'NC' indicates that |
+ | the type of pseudopotential is 'norm conserving'. Functional of    |
+ | exchange and correlation is decided by 4 given parameters in UPF   |
+ | file.  We also read in the 'core correction' if there exists.      |
+ | Also we can read the valence electrons number and the maximal      |
+ | angular momentum used in this pseudopotential. We also read in the |
+ | trail wave function, trail atomic density and local-pseudopotential|
+ | on logrithmic grid. The non-local pseudopotential projector is also|
+ | read in if there is any.                                           |
+ |                                                                    |
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+                PAO radial cut off (Bohr) = 15
+
+ Read in pseudopotential file is Pb_ONCV_PBE-1.0.upf
+                     pseudopotential type = NC
+          exchange-correlation functional = PBE
+                 nonlocal core correction = 0
+                        valence electrons = 14
+                                     lmax = 3
+                           number of zeta = 0
+                     number of projectors = 8
+                           L of projector = 0
+                           L of projector = 0
+                           L of projector = 1
+                           L of projector = 1
+                           L of projector = 2
+                           L of projector = 2
+                           L of projector = 3
+                           L of projector = 3
+                PAO radial cut off (Bohr) = 15
+
+ Read in pseudopotential file is Ti_ONCV_PBE-1.0.upf
+                     pseudopotential type = NC
+          exchange-correlation functional = PBE
+                 nonlocal core correction = 0
+                        valence electrons = 12
+                                     lmax = 2
+                           number of zeta = 0
+                     number of projectors = 6
+                           L of projector = 0
+                           L of projector = 0
+                           L of projector = 1
+                           L of projector = 1
+                           L of projector = 2
+                           L of projector = 2
+                PAO radial cut off (Bohr) = 15
+
+ Read in pseudopotential file is O_ONCV_PBE-1.0.upf
+                     pseudopotential type = NC
+          exchange-correlation functional = PBE
+                 nonlocal core correction = 0
+                        valence electrons = 6
+                                     lmax = 1
+                           number of zeta = 0
+                     number of projectors = 4
+                           L of projector = 0
+                           L of projector = 0
+                           L of projector = 1
+                           L of projector = 1
+     initial pseudo atomic orbital number = 0
+                                   NLOCAL = 84
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ Warning: number valence electrons > 4 for Pb: [Xe] 4f14 5d10 6s2 6p2
+ Warning: number valence electrons > 4 for Ti: [Ar] 3d2 4s2
+ Please make sure the pseudopential file is what you need
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                  
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ |                                                                    |
+ | Setup plane waves of charge/potential:                             |
+ | Use the energy cutoff and the lattice vectors to generate the      |
+ | dimensions of FFT grid. The number of FFT grid on each processor   |
+ | is 'nrxx'. The number of plane wave basis in reciprocal space is   |
+ | different for charege/potential and wave functions. We also set    |
+ | the 'sticks' for the parallel of FFT. The number of plane waves    |
+ | is 'npw' in each processor.                                        |
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+
+ SETUP THE PLANE WAVE BASIS
+ energy cutoff for charge/potential (unit:Ry) = 200
+          [fft grid for charge/potential] = 36, 36, 48
+                      [fft grid division] = 2, 2, 2
+      [big fft grid for charge/potential] = 18, 18, 24
+                                     nbxx = 3888
+                                     nrxx = 31104
+
+ SETUP PLANE WAVES FOR CHARGE/POTENTIAL
+                    number of plane waves = 22789
+                         number of sticks = 845
+
+ PARALLEL PW FOR CHARGE/POTENTIAL
+     PROC   COLUMNS(POT)             PW
+        1            423          11395
+        2            422          11394
+ --------------- sum -------------------
+        2            845          22789
+                            number of |g| = 1493
+                                  max |g| = 18.0865
+                                  min |g| = 0
+
+ SETUP THE ELECTRONS NUMBER
+            electron number of element Pb = 14
+      total electron number of element Pb = 14
+            electron number of element Ti = 12
+      total electron number of element Ti = 12
+             electron number of element O = 6
+       total electron number of element O = 18
+                           occupied bands = 22
+                                   NLOCAL = 84
+                                   NBANDS = 32
+                                   NBANDS = 32
+ DONE : SETUP UNITCELL Time : 0.094425 (SEC)
+
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ |                                                                    |
+ | Setup K-points                                                     |
+ | We setup the k-points according to input parameters.               |
+ | The reduced k-points are set according to symmetry operations.     |
+ | We treat the spin as another set of k-points.                      |
+ |                                                                    |
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+
+ SETUP K-POINTS
+                                    nspin = 1
+                   Input type of k points = Monkhorst-Pack(Gamma)
+                                   nkstot = 128
+
+  KPOINTS            DIRECT_X            DIRECT_Y            DIRECT_Z              WEIGHT
+        1                   0                   0                   0           0.0078125
+        2                0.25                   0                   0           0.0078125
+        3                 0.5                   0                   0           0.0078125
+        4                0.75                   0                   0           0.0078125
+        5                   0                0.25                   0           0.0078125
+        6                0.25                0.25                   0           0.0078125
+        7                 0.5                0.25                   0           0.0078125
+        8                0.75                0.25                   0           0.0078125
+        9                   0                 0.5                   0           0.0078125
+       10                0.25                 0.5                   0           0.0078125
+       11                 0.5                 0.5                   0           0.0078125
+       12                0.75                 0.5                   0           0.0078125
+       13                   0                0.75                   0           0.0078125
+       14                0.25                0.75                   0           0.0078125
+       15                 0.5                0.75                   0           0.0078125
+       16                0.75                0.75                   0           0.0078125
+       17                   0                   0               0.125           0.0078125
+       18                0.25                   0               0.125           0.0078125
+       19                 0.5                   0               0.125           0.0078125
+       20                0.75                   0               0.125           0.0078125
+       21                   0                0.25               0.125           0.0078125
+       22                0.25                0.25               0.125           0.0078125
+       23                 0.5                0.25               0.125           0.0078125
+       24                0.75                0.25               0.125           0.0078125
+       25                   0                 0.5               0.125           0.0078125
+       26                0.25                 0.5               0.125           0.0078125
+       27                 0.5                 0.5               0.125           0.0078125
+       28                0.75                 0.5               0.125           0.0078125
+       29                   0                0.75               0.125           0.0078125
+       30                0.25                0.75               0.125           0.0078125
+       31                 0.5                0.75               0.125           0.0078125
+       32                0.75                0.75               0.125           0.0078125
+       33                   0                   0                0.25           0.0078125
+       34                0.25                   0                0.25           0.0078125
+       35                 0.5                   0                0.25           0.0078125
+       36                0.75                   0                0.25           0.0078125
+       37                   0                0.25                0.25           0.0078125
+       38                0.25                0.25                0.25           0.0078125
+       39                 0.5                0.25                0.25           0.0078125
+       40                0.75                0.25                0.25           0.0078125
+       41                   0                 0.5                0.25           0.0078125
+       42                0.25                 0.5                0.25           0.0078125
+       43                 0.5                 0.5                0.25           0.0078125
+       44                0.75                 0.5                0.25           0.0078125
+       45                   0                0.75                0.25           0.0078125
+       46                0.25                0.75                0.25           0.0078125
+       47                 0.5                0.75                0.25           0.0078125
+       48                0.75                0.75                0.25           0.0078125
+       49                   0                   0               0.375           0.0078125
+       50                0.25                   0               0.375           0.0078125
+       51                 0.5                   0               0.375           0.0078125
+       52                0.75                   0               0.375           0.0078125
+       53                   0                0.25               0.375           0.0078125
+       54                0.25                0.25               0.375           0.0078125
+       55                 0.5                0.25               0.375           0.0078125
+       56                0.75                0.25               0.375           0.0078125
+       57                   0                 0.5               0.375           0.0078125
+       58                0.25                 0.5               0.375           0.0078125
+       59                 0.5                 0.5               0.375           0.0078125
+       60                0.75                 0.5               0.375           0.0078125
+       61                   0                0.75               0.375           0.0078125
+       62                0.25                0.75               0.375           0.0078125
+       63                 0.5                0.75               0.375           0.0078125
+       64                0.75                0.75               0.375           0.0078125
+       65                   0                   0                 0.5           0.0078125
+       66                0.25                   0                 0.5           0.0078125
+       67                 0.5                   0                 0.5           0.0078125
+       68                0.75                   0                 0.5           0.0078125
+       69                   0                0.25                 0.5           0.0078125
+       70                0.25                0.25                 0.5           0.0078125
+       71                 0.5                0.25                 0.5           0.0078125
+       72                0.75                0.25                 0.5           0.0078125
+       73                   0                 0.5                 0.5           0.0078125
+       74                0.25                 0.5                 0.5           0.0078125
+       75                 0.5                 0.5                 0.5           0.0078125
+       76                0.75                 0.5                 0.5           0.0078125
+       77                   0                0.75                 0.5           0.0078125
+       78                0.25                0.75                 0.5           0.0078125
+       79                 0.5                0.75                 0.5           0.0078125
+       80                0.75                0.75                 0.5           0.0078125
+       81                   0                   0               0.625           0.0078125
+       82                0.25                   0               0.625           0.0078125
+       83                 0.5                   0               0.625           0.0078125
+       84                0.75                   0               0.625           0.0078125
+       85                   0                0.25               0.625           0.0078125
+       86                0.25                0.25               0.625           0.0078125
+       87                 0.5                0.25               0.625           0.0078125
+       88                0.75                0.25               0.625           0.0078125
+       89                   0                 0.5               0.625           0.0078125
+       90                0.25                 0.5               0.625           0.0078125
+       91                 0.5                 0.5               0.625           0.0078125
+       92                0.75                 0.5               0.625           0.0078125
+       93                   0                0.75               0.625           0.0078125
+       94                0.25                0.75               0.625           0.0078125
+       95                 0.5                0.75               0.625           0.0078125
+       96                0.75                0.75               0.625           0.0078125
+       97                   0                   0                0.75           0.0078125
+       98                0.25                   0                0.75           0.0078125
+       99                 0.5                   0                0.75           0.0078125
+      100                0.75                   0                0.75           0.0078125
+      101                   0                0.25                0.75           0.0078125
+      102                0.25                0.25                0.75           0.0078125
+      103                 0.5                0.25                0.75           0.0078125
+      104                0.75                0.25                0.75           0.0078125
+      105                   0                 0.5                0.75           0.0078125
+      106                0.25                 0.5                0.75           0.0078125
+      107                 0.5                 0.5                0.75           0.0078125
+      108                0.75                 0.5                0.75           0.0078125
+      109                   0                0.75                0.75           0.0078125
+      110                0.25                0.75                0.75           0.0078125
+      111                 0.5                0.75                0.75           0.0078125
+      112                0.75                0.75                0.75           0.0078125
+      113                   0                   0               0.875           0.0078125
+      114                0.25                   0               0.875           0.0078125
+      115                 0.5                   0               0.875           0.0078125
+      116                0.75                   0               0.875           0.0078125
+      117                   0                0.25               0.875           0.0078125
+      118                0.25                0.25               0.875           0.0078125
+      119                 0.5                0.25               0.875           0.0078125
+      120                0.75                0.25               0.875           0.0078125
+      121                   0                 0.5               0.875           0.0078125
+      122                0.25                 0.5               0.875           0.0078125
+      123                 0.5                 0.5               0.875           0.0078125
+      124                0.75                 0.5               0.875           0.0078125
+      125                   0                0.75               0.875           0.0078125
+      126                0.25                0.75               0.875           0.0078125
+      127                 0.5                0.75               0.875           0.0078125
+      128                0.75                0.75               0.875           0.0078125
+
+           k-point number in this process = 128
+       minimum distributed K point number = 128
+
+  KPOINTS         CARTESIAN_X         CARTESIAN_Y         CARTESIAN_Z              WEIGHT
+        1                   0                   0                   0            0.015625
+        2           0.0651551                   0                   0            0.015625
+        3             0.13031                   0                   0            0.015625
+        4            0.195465                   0                   0            0.015625
+        5                   0           0.0651551                   0            0.015625
+        6           0.0651551           0.0651551                   0            0.015625
+        7             0.13031           0.0651551                   0            0.015625
+        8            0.195465           0.0651551                   0            0.015625
+        9                   0             0.13031                   0            0.015625
+       10           0.0651551             0.13031                   0            0.015625
+       11             0.13031             0.13031                   0            0.015625
+       12            0.195465             0.13031                   0            0.015625
+       13                   0            0.195465                   0            0.015625
+       14           0.0651551            0.195465                   0            0.015625
+       15             0.13031            0.195465                   0            0.015625
+       16            0.195465            0.195465                   0            0.015625
+       17                   0                   0           0.0261124            0.015625
+       18           0.0651551                   0           0.0261124            0.015625
+       19             0.13031                   0           0.0261124            0.015625
+       20            0.195465                   0           0.0261124            0.015625
+       21                   0           0.0651551           0.0261124            0.015625
+       22           0.0651551           0.0651551           0.0261124            0.015625
+       23             0.13031           0.0651551           0.0261124            0.015625
+       24            0.195465           0.0651551           0.0261124            0.015625
+       25                   0             0.13031           0.0261124            0.015625
+       26           0.0651551             0.13031           0.0261124            0.015625
+       27             0.13031             0.13031           0.0261124            0.015625
+       28            0.195465             0.13031           0.0261124            0.015625
+       29                   0            0.195465           0.0261124            0.015625
+       30           0.0651551            0.195465           0.0261124            0.015625
+       31             0.13031            0.195465           0.0261124            0.015625
+       32            0.195465            0.195465           0.0261124            0.015625
+       33                   0                   0           0.0522248            0.015625
+       34           0.0651551                   0           0.0522248            0.015625
+       35             0.13031                   0           0.0522248            0.015625
+       36            0.195465                   0           0.0522248            0.015625
+       37                   0           0.0651551           0.0522248            0.015625
+       38           0.0651551           0.0651551           0.0522248            0.015625
+       39             0.13031           0.0651551           0.0522248            0.015625
+       40            0.195465           0.0651551           0.0522248            0.015625
+       41                   0             0.13031           0.0522248            0.015625
+       42           0.0651551             0.13031           0.0522248            0.015625
+       43             0.13031             0.13031           0.0522248            0.015625
+       44            0.195465             0.13031           0.0522248            0.015625
+       45                   0            0.195465           0.0522248            0.015625
+       46           0.0651551            0.195465           0.0522248            0.015625
+       47             0.13031            0.195465           0.0522248            0.015625
+       48            0.195465            0.195465           0.0522248            0.015625
+       49                   0                   0           0.0783372            0.015625
+       50           0.0651551                   0           0.0783372            0.015625
+       51             0.13031                   0           0.0783372            0.015625
+       52            0.195465                   0           0.0783372            0.015625
+       53                   0           0.0651551           0.0783372            0.015625
+       54           0.0651551           0.0651551           0.0783372            0.015625
+       55             0.13031           0.0651551           0.0783372            0.015625
+       56            0.195465           0.0651551           0.0783372            0.015625
+       57                   0             0.13031           0.0783372            0.015625
+       58           0.0651551             0.13031           0.0783372            0.015625
+       59             0.13031             0.13031           0.0783372            0.015625
+       60            0.195465             0.13031           0.0783372            0.015625
+       61                   0            0.195465           0.0783372            0.015625
+       62           0.0651551            0.195465           0.0783372            0.015625
+       63             0.13031            0.195465           0.0783372            0.015625
+       64            0.195465            0.195465           0.0783372            0.015625
+       65                   0                   0             0.10445            0.015625
+       66           0.0651551                   0             0.10445            0.015625
+       67             0.13031                   0             0.10445            0.015625
+       68            0.195465                   0             0.10445            0.015625
+       69                   0           0.0651551             0.10445            0.015625
+       70           0.0651551           0.0651551             0.10445            0.015625
+       71             0.13031           0.0651551             0.10445            0.015625
+       72            0.195465           0.0651551             0.10445            0.015625
+       73                   0             0.13031             0.10445            0.015625
+       74           0.0651551             0.13031             0.10445            0.015625
+       75             0.13031             0.13031             0.10445            0.015625
+       76            0.195465             0.13031             0.10445            0.015625
+       77                   0            0.195465             0.10445            0.015625
+       78           0.0651551            0.195465             0.10445            0.015625
+       79             0.13031            0.195465             0.10445            0.015625
+       80            0.195465            0.195465             0.10445            0.015625
+       81                   0                   0            0.130562            0.015625
+       82           0.0651551                   0            0.130562            0.015625
+       83             0.13031                   0            0.130562            0.015625
+       84            0.195465                   0            0.130562            0.015625
+       85                   0           0.0651551            0.130562            0.015625
+       86           0.0651551           0.0651551            0.130562            0.015625
+       87             0.13031           0.0651551            0.130562            0.015625
+       88            0.195465           0.0651551            0.130562            0.015625
+       89                   0             0.13031            0.130562            0.015625
+       90           0.0651551             0.13031            0.130562            0.015625
+       91             0.13031             0.13031            0.130562            0.015625
+       92            0.195465             0.13031            0.130562            0.015625
+       93                   0            0.195465            0.130562            0.015625
+       94           0.0651551            0.195465            0.130562            0.015625
+       95             0.13031            0.195465            0.130562            0.015625
+       96            0.195465            0.195465            0.130562            0.015625
+       97                   0                   0            0.156674            0.015625
+       98           0.0651551                   0            0.156674            0.015625
+       99             0.13031                   0            0.156674            0.015625
+      100            0.195465                   0            0.156674            0.015625
+      101                   0           0.0651551            0.156674            0.015625
+      102           0.0651551           0.0651551            0.156674            0.015625
+      103             0.13031           0.0651551            0.156674            0.015625
+      104            0.195465           0.0651551            0.156674            0.015625
+      105                   0             0.13031            0.156674            0.015625
+      106           0.0651551             0.13031            0.156674            0.015625
+      107             0.13031             0.13031            0.156674            0.015625
+      108            0.195465             0.13031            0.156674            0.015625
+      109                   0            0.195465            0.156674            0.015625
+      110           0.0651551            0.195465            0.156674            0.015625
+      111             0.13031            0.195465            0.156674            0.015625
+      112            0.195465            0.195465            0.156674            0.015625
+      113                   0                   0            0.182787            0.015625
+      114           0.0651551                   0            0.182787            0.015625
+      115             0.13031                   0            0.182787            0.015625
+      116            0.195465                   0            0.182787            0.015625
+      117                   0           0.0651551            0.182787            0.015625
+      118           0.0651551           0.0651551            0.182787            0.015625
+      119             0.13031           0.0651551            0.182787            0.015625
+      120            0.195465           0.0651551            0.182787            0.015625
+      121                   0             0.13031            0.182787            0.015625
+      122           0.0651551             0.13031            0.182787            0.015625
+      123             0.13031             0.13031            0.182787            0.015625
+      124            0.195465             0.13031            0.182787            0.015625
+      125                   0            0.195465            0.182787            0.015625
+      126           0.0651551            0.195465            0.182787            0.015625
+      127             0.13031            0.195465            0.182787            0.015625
+      128            0.195465            0.195465            0.182787            0.015625
+
+  KPOINTS            DIRECT_X            DIRECT_Y            DIRECT_Z              WEIGHT
+        1                   0                   0                   0            0.015625
+        2                0.25                   0                   0            0.015625
+        3                 0.5                   0                   0            0.015625
+        4                0.75                   0                   0            0.015625
+        5                   0                0.25                   0            0.015625
+        6                0.25                0.25                   0            0.015625
+        7                 0.5                0.25                   0            0.015625
+        8                0.75                0.25                   0            0.015625
+        9                   0                 0.5                   0            0.015625
+       10                0.25                 0.5                   0            0.015625
+       11                 0.5                 0.5                   0            0.015625
+       12                0.75                 0.5                   0            0.015625
+       13                   0                0.75                   0            0.015625
+       14                0.25                0.75                   0            0.015625
+       15                 0.5                0.75                   0            0.015625
+       16                0.75                0.75                   0            0.015625
+       17                   0                   0               0.125            0.015625
+       18                0.25                   0               0.125            0.015625
+       19                 0.5                   0               0.125            0.015625
+       20                0.75                   0               0.125            0.015625
+       21                   0                0.25               0.125            0.015625
+       22                0.25                0.25               0.125            0.015625
+       23                 0.5                0.25               0.125            0.015625
+       24                0.75                0.25               0.125            0.015625
+       25                   0                 0.5               0.125            0.015625
+       26                0.25                 0.5               0.125            0.015625
+       27                 0.5                 0.5               0.125            0.015625
+       28                0.75                 0.5               0.125            0.015625
+       29                   0                0.75               0.125            0.015625
+       30                0.25                0.75               0.125            0.015625
+       31                 0.5                0.75               0.125            0.015625
+       32                0.75                0.75               0.125            0.015625
+       33                   0                   0                0.25            0.015625
+       34                0.25                   0                0.25            0.015625
+       35                 0.5                   0                0.25            0.015625
+       36                0.75                   0                0.25            0.015625
+       37                   0                0.25                0.25            0.015625
+       38                0.25                0.25                0.25            0.015625
+       39                 0.5                0.25                0.25            0.015625
+       40                0.75                0.25                0.25            0.015625
+       41                   0                 0.5                0.25            0.015625
+       42                0.25                 0.5                0.25            0.015625
+       43                 0.5                 0.5                0.25            0.015625
+       44                0.75                 0.5                0.25            0.015625
+       45                   0                0.75                0.25            0.015625
+       46                0.25                0.75                0.25            0.015625
+       47                 0.5                0.75                0.25            0.015625
+       48                0.75                0.75                0.25            0.015625
+       49                   0                   0               0.375            0.015625
+       50                0.25                   0               0.375            0.015625
+       51                 0.5                   0               0.375            0.015625
+       52                0.75                   0               0.375            0.015625
+       53                   0                0.25               0.375            0.015625
+       54                0.25                0.25               0.375            0.015625
+       55                 0.5                0.25               0.375            0.015625
+       56                0.75                0.25               0.375            0.015625
+       57                   0                 0.5               0.375            0.015625
+       58                0.25                 0.5               0.375            0.015625
+       59                 0.5                 0.5               0.375            0.015625
+       60                0.75                 0.5               0.375            0.015625
+       61                   0                0.75               0.375            0.015625
+       62                0.25                0.75               0.375            0.015625
+       63                 0.5                0.75               0.375            0.015625
+       64                0.75                0.75               0.375            0.015625
+       65                   0                   0                 0.5            0.015625
+       66                0.25                   0                 0.5            0.015625
+       67                 0.5                   0                 0.5            0.015625
+       68                0.75                   0                 0.5            0.015625
+       69                   0                0.25                 0.5            0.015625
+       70                0.25                0.25                 0.5            0.015625
+       71                 0.5                0.25                 0.5            0.015625
+       72                0.75                0.25                 0.5            0.015625
+       73                   0                 0.5                 0.5            0.015625
+       74                0.25                 0.5                 0.5            0.015625
+       75                 0.5                 0.5                 0.5            0.015625
+       76                0.75                 0.5                 0.5            0.015625
+       77                   0                0.75                 0.5            0.015625
+       78                0.25                0.75                 0.5            0.015625
+       79                 0.5                0.75                 0.5            0.015625
+       80                0.75                0.75                 0.5            0.015625
+       81                   0                   0               0.625            0.015625
+       82                0.25                   0               0.625            0.015625
+       83                 0.5                   0               0.625            0.015625
+       84                0.75                   0               0.625            0.015625
+       85                   0                0.25               0.625            0.015625
+       86                0.25                0.25               0.625            0.015625
+       87                 0.5                0.25               0.625            0.015625
+       88                0.75                0.25               0.625            0.015625
+       89                   0                 0.5               0.625            0.015625
+       90                0.25                 0.5               0.625            0.015625
+       91                 0.5                 0.5               0.625            0.015625
+       92                0.75                 0.5               0.625            0.015625
+       93                   0                0.75               0.625            0.015625
+       94                0.25                0.75               0.625            0.015625
+       95                 0.5                0.75               0.625            0.015625
+       96                0.75                0.75               0.625            0.015625
+       97                   0                   0                0.75            0.015625
+       98                0.25                   0                0.75            0.015625
+       99                 0.5                   0                0.75            0.015625
+      100                0.75                   0                0.75            0.015625
+      101                   0                0.25                0.75            0.015625
+      102                0.25                0.25                0.75            0.015625
+      103                 0.5                0.25                0.75            0.015625
+      104                0.75                0.25                0.75            0.015625
+      105                   0                 0.5                0.75            0.015625
+      106                0.25                 0.5                0.75            0.015625
+      107                 0.5                 0.5                0.75            0.015625
+      108                0.75                 0.5                0.75            0.015625
+      109                   0                0.75                0.75            0.015625
+      110                0.25                0.75                0.75            0.015625
+      111                 0.5                0.75                0.75            0.015625
+      112                0.75                0.75                0.75            0.015625
+      113                   0                   0               0.875            0.015625
+      114                0.25                   0               0.875            0.015625
+      115                 0.5                   0               0.875            0.015625
+      116                0.75                   0               0.875            0.015625
+      117                   0                0.25               0.875            0.015625
+      118                0.25                0.25               0.875            0.015625
+      119                 0.5                0.25               0.875            0.015625
+      120                0.75                0.25               0.875            0.015625
+      121                   0                 0.5               0.875            0.015625
+      122                0.25                 0.5               0.875            0.015625
+      123                 0.5                 0.5               0.875            0.015625
+      124                0.75                 0.5               0.875            0.015625
+      125                   0                0.75               0.875            0.015625
+      126                0.25                0.75               0.875            0.015625
+      127                 0.5                0.75               0.875            0.015625
+      128                0.75                0.75               0.875            0.015625
+ DONE : INIT K-POINTS Time : 0.0977405 (SEC)
+
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ |                                                                    |
+ | Setup numerical orbitals:                                          |
+ | This part setup: numerical atomic orbitals, non-local projectors   |
+ | and neutral potential (1D). The atomic orbitals information        |
+ | including the radius, angular momentum and zeta number.            |
+ | The neutral potential is the sum of local part of pseudopotential  |
+ | and potential given by atomic charge, they will cancel out beyond  |
+ | a certain radius cutoff, because the Z/r character.                |
+ |                                                                    |
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+
+ SETUP ONE DIMENSIONAL ORBITALS/POTENTIAL
+                        delta k  (1/Bohr) = 0.01
+                        delta r    (Bohr) = 0.01
+                        dr_uniform (Bohr) = 0.001
+                        rmax       (Bohr) = 30
+                                    kmesh = 711
+      ORBITAL  L  N      nr      dr    RCUT  CHECK_UNIT    NEW_UNIT
+            1  0  0    1001    0.01      10           1           1
+            2  0  1    1001    0.01      10           1           1
+            3  1  0    1001    0.01      10           1           1
+            4  1  1    1001    0.01      10           1           1
+            5  2  0    1001    0.01      10           1           1
+            6  2  1    1001    0.01      10           1           1
+      ORBITAL  L  N      nr      dr    RCUT  CHECK_UNIT    NEW_UNIT
+            1  0  0    1001    0.01      10           1           1
+            2  0  1    1001    0.01      10           1           1
+            3  0  2    1001    0.01      10           1           1
+            4  0  3    1001    0.01      10           1           1
+            5  1  0    1001    0.01      10           1           1
+            6  1  1    1001    0.01      10           1           1
+            7  2  0    1001    0.01      10           1           1
+            8  2  1    1001    0.01      10           1           1
+            9  3  0    1001    0.01      10           1           1
+      ORBITAL  L  N      nr      dr    RCUT  CHECK_UNIT    NEW_UNIT
+            1  0  0    1001    0.01      10           1           1
+            2  0  1    1001    0.01      10           1           1
+            3  1  0    1001    0.01      10           1           1
+            4  1  1    1001    0.01      10           1           1
+            5  2  0    1001    0.01      10           1           1
+ SET NONLOCAL PSEUDOPOTENTIAL PROJECTORS
+ SET NONLOCAL PSEUDOPOTENTIAL PROJECTORS
+ SET NONLOCAL PSEUDOPOTENTIAL PROJECTORS
+ max number of nonlocal projetors among all species is 8
+
+ SETUP THE TWO-CENTER INTEGRATION TABLES
+
+ SETUP THE DIVISION OF H/S MATRIX
+ divide the H&S matrix using 2D block algorithms.
+                                     nb2d = 1
+                  trace_loc_row dimension = 84
+                  trace_loc_col dimension = 84
+                                     nloc = 3528
+ DONE : INIT CHARGE Time : 4.58 (SEC)
+
+                                 init_chg = file
+ try to read charge from file : OUT.ABACUS/SPIN1_CHG
+ Find the file, try to read charge from file.
+ read in fermi energy = 0.689
+ Read in the charge density: OUT.ABACUS/SPIN1_CHG
+ DONE : INIT POTENTIAL Time : 4.62537 (SEC)
+
+
+ -------------------------------------------
+ NONSELF-CONSISTENT
+ -------------------------------------------
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ |                                                                    |
+ | Search adjacent atoms:                                             |
+ | Set the adjacent atoms for each atom and set the periodic boundary |
+ | condition for the atoms on real space FFT grid. For k-dependent    |
+ | algorithm, we also need to set the sparse H and S matrix element   |
+ | for each atom.                                                     |
+ |                                                                    |
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+
+ SETUP SEARCHING RADIUS FOR PROGRAM TO SEARCH ADJACENT ATOMS
+                  longest orb rcut (Bohr) = 10
+   longest nonlocal projector rcut (Bohr) = 3.68
+              searching radius is (Bohr)) = 27.4
+         searching radius unit is (Bohr)) = 1.89
+
+ SETUP EXTENDED REAL SPACE GRID FOR GRID INTEGRATION
+                        [real space grid] = 36, 36, 48
+               [big cell numbers in grid] = 18, 18, 24
+           [meshcell numbers in big cell] = 2, 2, 2
+                      [extended fft grid] = 25, 25, 27
+              [dimension of extened grid] = 69, 69, 79
+                            UnitCellTotal = 125
+              Atom number in sub-FFT-grid = 5
+    Local orbitals number in sub-FFT-grid = 84
+                                ParaV.nnr = 474919
+                                     nnrg = 506888
+ Memory of pvpR : 3.87 MB
+                                nnrg_last = 0
+                                 nnrg_now = 506888
+ end of band structure calculation 
+ band eigenvalue in this processor (eV) :
+ k-points1(128): 0 0 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.6 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.29 0
+ spin1final_state 6 -7.4 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.28 0
+ spin1final_state 11 -6.22 0
+ spin1final_state 12 -5.99 0
+ spin1final_state 13 2.68 0
+ spin1final_state 14 5.59 0
+ spin1final_state 15 5.59 0
+ spin1final_state 16 6.41 0
+ spin1final_state 17 6.77 0
+ spin1final_state 18 6.77 0
+ spin1final_state 19 7.01 0
+ spin1final_state 20 7.27 0
+ spin1final_state 21 8.26 0
+ spin1final_state 22 8.26 0
+ spin1final_state 23 11.4 0
+ spin1final_state 24 13.4 0
+ spin1final_state 25 13.4 0
+ spin1final_state 26 14 0
+ spin1final_state 27 14.5 0
+ spin1final_state 28 14.6 0
+ spin1final_state 29 16.7 0
+ spin1final_state 30 16.7 0
+ spin1final_state 31 18.8 0
+ spin1final_state 32 21.2 0
+
+ k-points2(128): 0.0652 0 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.07 0
+ spin1final_state 6 -7.42 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.15 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.51 0
+ spin1final_state 14 5.27 0
+ spin1final_state 15 5.8 0
+ spin1final_state 16 5.8 0
+ spin1final_state 17 6.81 0
+ spin1final_state 18 6.85 0
+ spin1final_state 19 7.33 0
+ spin1final_state 20 7.44 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.38 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13.4 0
+ spin1final_state 26 13.9 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 16.4 0
+ spin1final_state 31 19.8 0
+ spin1final_state 32 21.9 0
+
+ k-points3(128): 0.13 0 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.83 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.07 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.09 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.34 0
+ spin1final_state 14 5.08 0
+ spin1final_state 15 5.94 0
+ spin1final_state 16 6.26 0
+ spin1final_state 17 6.36 0
+ spin1final_state 18 6.51 0
+ spin1final_state 19 6.89 0
+ spin1final_state 20 7.22 0
+ spin1final_state 21 7.29 0
+ spin1final_state 22 9.37 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.5 0
+ spin1final_state 27 13.8 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.2 0
+ spin1final_state 31 21 0
+ spin1final_state 32 22.4 0
+
+ k-points4(128): 0.195 0 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.07 0
+ spin1final_state 6 -7.42 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.15 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.51 0
+ spin1final_state 14 5.27 0
+ spin1final_state 15 5.8 0
+ spin1final_state 16 5.8 0
+ spin1final_state 17 6.81 0
+ spin1final_state 18 6.85 0
+ spin1final_state 19 7.33 0
+ spin1final_state 20 7.44 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.38 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13.4 0
+ spin1final_state 26 13.9 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 16.4 0
+ spin1final_state 31 19.8 0
+ spin1final_state 32 21.9 0
+
+ k-points5(128): 0 0.0652 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.07 0
+ spin1final_state 6 -7.42 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.15 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.51 0
+ spin1final_state 14 5.27 0
+ spin1final_state 15 5.8 0
+ spin1final_state 16 5.8 0
+ spin1final_state 17 6.81 0
+ spin1final_state 18 6.85 0
+ spin1final_state 19 7.33 0
+ spin1final_state 20 7.44 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.38 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13.4 0
+ spin1final_state 26 13.9 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 16.4 0
+ spin1final_state 31 19.8 0
+ spin1final_state 32 21.9 0
+
+ k-points6(128): 0.0652 0.0652 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.86 0
+ spin1final_state 6 -7.43 0
+ spin1final_state 7 -7.1 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.27 0
+ spin1final_state 11 -6.03 0
+ spin1final_state 12 -5.89 0
+ spin1final_state 13 2.34 0
+ spin1final_state 14 5.24 0
+ spin1final_state 15 5.53 0
+ spin1final_state 16 5.95 0
+ spin1final_state 17 6.43 0
+ spin1final_state 18 6.44 0
+ spin1final_state 19 6.96 0
+ spin1final_state 20 7.52 0
+ spin1final_state 21 8.31 0
+ spin1final_state 22 8.45 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.8 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 15.7 0
+ spin1final_state 31 20.6 0
+ spin1final_state 32 22.3 0
+
+ k-points7(128): 0.13 0.0652 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.65 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.16 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.28 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.97 0
+ spin1final_state 12 -5.86 0
+ spin1final_state 13 2.17 0
+ spin1final_state 14 5.11 0
+ spin1final_state 15 5.62 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.46 0
+ spin1final_state 18 6.47 0
+ spin1final_state 19 6.75 0
+ spin1final_state 20 7.15 0
+ spin1final_state 21 8.35 0
+ spin1final_state 22 8.56 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.2 0
+ spin1final_state 27 14 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.6 0
+ spin1final_state 31 21.7 0
+ spin1final_state 32 21.9 0
+
+ k-points8(128): 0.195 0.0652 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.86 0
+ spin1final_state 6 -7.43 0
+ spin1final_state 7 -7.1 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.27 0
+ spin1final_state 11 -6.03 0
+ spin1final_state 12 -5.89 0
+ spin1final_state 13 2.34 0
+ spin1final_state 14 5.24 0
+ spin1final_state 15 5.53 0
+ spin1final_state 16 5.95 0
+ spin1final_state 17 6.43 0
+ spin1final_state 18 6.44 0
+ spin1final_state 19 6.96 0
+ spin1final_state 20 7.52 0
+ spin1final_state 21 8.31 0
+ spin1final_state 22 8.45 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.8 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 15.7 0
+ spin1final_state 31 20.6 0
+ spin1final_state 32 22.3 0
+
+ k-points9(128): 0 0.13 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.83 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.07 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.09 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.34 0
+ spin1final_state 14 5.08 0
+ spin1final_state 15 5.94 0
+ spin1final_state 16 6.26 0
+ spin1final_state 17 6.36 0
+ spin1final_state 18 6.51 0
+ spin1final_state 19 6.89 0
+ spin1final_state 20 7.22 0
+ spin1final_state 21 7.29 0
+ spin1final_state 22 9.37 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.5 0
+ spin1final_state 27 13.8 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.2 0
+ spin1final_state 31 21 0
+ spin1final_state 32 22.4 0
+
+ k-points10(128): 0.0652 0.13 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.65 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.16 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.28 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.97 0
+ spin1final_state 12 -5.86 0
+ spin1final_state 13 2.17 0
+ spin1final_state 14 5.11 0
+ spin1final_state 15 5.62 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.46 0
+ spin1final_state 18 6.47 0
+ spin1final_state 19 6.75 0
+ spin1final_state 20 7.15 0
+ spin1final_state 21 8.35 0
+ spin1final_state 22 8.56 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.2 0
+ spin1final_state 27 14 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.6 0
+ spin1final_state 31 21.7 0
+ spin1final_state 32 21.9 0
+
+ k-points11(128): 0.13 0.13 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.47 0
+ spin1final_state 6 -7.47 0
+ spin1final_state 7 -7.24 0
+ spin1final_state 8 -6.27 0
+ spin1final_state 9 -6.25 0
+ spin1final_state 10 -6.05 0
+ spin1final_state 11 -5.87 0
+ spin1final_state 12 -5.87 0
+ spin1final_state 13 1.92 0
+ spin1final_state 14 4.88 0
+ spin1final_state 15 5.73 0
+ spin1final_state 16 6.11 0
+ spin1final_state 17 6.11 0
+ spin1final_state 18 6.7 0
+ spin1final_state 19 6.7 0
+ spin1final_state 20 6.91 0
+ spin1final_state 21 7.11 0
+ spin1final_state 22 9.09 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.8 0
+ spin1final_state 25 12.8 0
+ spin1final_state 26 12.8 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 14.6 0
+ spin1final_state 29 15.7 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21.3 0
+ spin1final_state 32 23.1 0
+
+ k-points12(128): 0.195 0.13 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.65 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.16 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.28 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.97 0
+ spin1final_state 12 -5.86 0
+ spin1final_state 13 2.17 0
+ spin1final_state 14 5.11 0
+ spin1final_state 15 5.62 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.46 0
+ spin1final_state 18 6.47 0
+ spin1final_state 19 6.75 0
+ spin1final_state 20 7.15 0
+ spin1final_state 21 8.35 0
+ spin1final_state 22 8.56 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.2 0
+ spin1final_state 27 14 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.6 0
+ spin1final_state 31 21.7 0
+ spin1final_state 32 21.9 0
+
+ k-points13(128): 0 0.195 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.07 0
+ spin1final_state 6 -7.42 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.15 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.51 0
+ spin1final_state 14 5.27 0
+ spin1final_state 15 5.8 0
+ spin1final_state 16 5.8 0
+ spin1final_state 17 6.81 0
+ spin1final_state 18 6.85 0
+ spin1final_state 19 7.33 0
+ spin1final_state 20 7.44 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.38 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13.4 0
+ spin1final_state 26 13.9 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 16.4 0
+ spin1final_state 31 19.8 0
+ spin1final_state 32 21.9 0
+
+ k-points14(128): 0.0652 0.195 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.86 0
+ spin1final_state 6 -7.43 0
+ spin1final_state 7 -7.1 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.27 0
+ spin1final_state 11 -6.03 0
+ spin1final_state 12 -5.89 0
+ spin1final_state 13 2.34 0
+ spin1final_state 14 5.24 0
+ spin1final_state 15 5.53 0
+ spin1final_state 16 5.95 0
+ spin1final_state 17 6.43 0
+ spin1final_state 18 6.44 0
+ spin1final_state 19 6.96 0
+ spin1final_state 20 7.52 0
+ spin1final_state 21 8.31 0
+ spin1final_state 22 8.45 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.8 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 15.7 0
+ spin1final_state 31 20.6 0
+ spin1final_state 32 22.3 0
+
+ k-points15(128): 0.13 0.195 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.65 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.16 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.28 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.97 0
+ spin1final_state 12 -5.86 0
+ spin1final_state 13 2.17 0
+ spin1final_state 14 5.11 0
+ spin1final_state 15 5.62 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.46 0
+ spin1final_state 18 6.47 0
+ spin1final_state 19 6.75 0
+ spin1final_state 20 7.15 0
+ spin1final_state 21 8.35 0
+ spin1final_state 22 8.56 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.2 0
+ spin1final_state 27 14 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.6 0
+ spin1final_state 31 21.7 0
+ spin1final_state 32 21.9 0
+
+ k-points16(128): 0.195 0.195 0
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.86 0
+ spin1final_state 6 -7.43 0
+ spin1final_state 7 -7.1 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.27 0
+ spin1final_state 11 -6.03 0
+ spin1final_state 12 -5.89 0
+ spin1final_state 13 2.34 0
+ spin1final_state 14 5.24 0
+ spin1final_state 15 5.53 0
+ spin1final_state 16 5.95 0
+ spin1final_state 17 6.43 0
+ spin1final_state 18 6.44 0
+ spin1final_state 19 6.96 0
+ spin1final_state 20 7.52 0
+ spin1final_state 21 8.31 0
+ spin1final_state 22 8.45 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.8 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 15.7 0
+ spin1final_state 31 20.6 0
+ spin1final_state 32 22.3 0
+
+ k-points17(128): 0 0 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.6 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.27 0
+ spin1final_state 6 -7.4 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.28 0
+ spin1final_state 11 -6.23 0
+ spin1final_state 12 -6 0
+ spin1final_state 13 2.57 0
+ spin1final_state 14 5.55 0
+ spin1final_state 15 5.55 0
+ spin1final_state 16 6.61 0
+ spin1final_state 17 6.83 0
+ spin1final_state 18 6.83 0
+ spin1final_state 19 6.96 0
+ spin1final_state 20 7.27 0
+ spin1final_state 21 8.25 0
+ spin1final_state 22 8.25 0
+ spin1final_state 23 11.4 0
+ spin1final_state 24 13.4 0
+ spin1final_state 25 13.4 0
+ spin1final_state 26 14 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 16.6 0
+ spin1final_state 30 16.6 0
+ spin1final_state 31 19.1 0
+ spin1final_state 32 21.4 0
+
+ k-points18(128): 0.0652 0 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.05 0
+ spin1final_state 6 -7.42 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.15 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.43 0
+ spin1final_state 14 5.24 0
+ spin1final_state 15 5.77 0
+ spin1final_state 16 5.84 0
+ spin1final_state 17 6.85 0
+ spin1final_state 18 6.85 0
+ spin1final_state 19 7.27 0
+ spin1final_state 20 7.5 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.4 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 14 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 16.4 0
+ spin1final_state 31 20.1 0
+ spin1final_state 32 22 0
+
+ k-points19(128): 0.13 0 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.83 0
+ spin1final_state 6 -7.4 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.09 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.3 0
+ spin1final_state 14 5.04 0
+ spin1final_state 15 5.98 0
+ spin1final_state 16 6.17 0
+ spin1final_state 17 6.23 0
+ spin1final_state 18 6.53 0
+ spin1final_state 19 6.98 0
+ spin1final_state 20 7.26 0
+ spin1final_state 21 7.36 0
+ spin1final_state 22 9.27 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.5 0
+ spin1final_state 27 14 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.3 0
+ spin1final_state 30 16.1 0
+ spin1final_state 31 21.2 0
+ spin1final_state 32 21.9 0
+
+ k-points20(128): 0.195 0 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.05 0
+ spin1final_state 6 -7.42 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.15 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.43 0
+ spin1final_state 14 5.24 0
+ spin1final_state 15 5.77 0
+ spin1final_state 16 5.84 0
+ spin1final_state 17 6.85 0
+ spin1final_state 18 6.85 0
+ spin1final_state 19 7.27 0
+ spin1final_state 20 7.5 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.4 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 14 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 16.4 0
+ spin1final_state 31 20.1 0
+ spin1final_state 32 22 0
+
+ k-points21(128): 0 0.0652 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.05 0
+ spin1final_state 6 -7.42 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.15 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.43 0
+ spin1final_state 14 5.24 0
+ spin1final_state 15 5.77 0
+ spin1final_state 16 5.84 0
+ spin1final_state 17 6.85 0
+ spin1final_state 18 6.85 0
+ spin1final_state 19 7.27 0
+ spin1final_state 20 7.5 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.4 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 14 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 16.4 0
+ spin1final_state 31 20.1 0
+ spin1final_state 32 22 0
+
+ k-points22(128): 0.0652 0.0652 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.85 0
+ spin1final_state 6 -7.43 0
+ spin1final_state 7 -7.09 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.27 0
+ spin1final_state 11 -6.03 0
+ spin1final_state 12 -5.89 0
+ spin1final_state 13 2.31 0
+ spin1final_state 14 5.2 0
+ spin1final_state 15 5.43 0
+ spin1final_state 16 5.83 0
+ spin1final_state 17 6.49 0
+ spin1final_state 18 6.53 0
+ spin1final_state 19 7 0
+ spin1final_state 20 7.58 0
+ spin1final_state 21 8.31 0
+ spin1final_state 22 8.41 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.9 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 15.7 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 22.3 0
+
+ k-points23(128): 0.13 0.0652 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.66 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.14 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.28 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.97 0
+ spin1final_state 12 -5.86 0
+ spin1final_state 13 2.18 0
+ spin1final_state 14 5.09 0
+ spin1final_state 15 5.44 0
+ spin1final_state 16 5.5 0
+ spin1final_state 17 6.33 0
+ spin1final_state 18 6.74 0
+ spin1final_state 19 6.76 0
+ spin1final_state 20 7.28 0
+ spin1final_state 21 8.29 0
+ spin1final_state 22 8.5 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.3 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.6 0
+ spin1final_state 31 21.7 0
+ spin1final_state 32 21.8 0
+
+ k-points24(128): 0.195 0.0652 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.85 0
+ spin1final_state 6 -7.43 0
+ spin1final_state 7 -7.09 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.27 0
+ spin1final_state 11 -6.03 0
+ spin1final_state 12 -5.89 0
+ spin1final_state 13 2.31 0
+ spin1final_state 14 5.2 0
+ spin1final_state 15 5.43 0
+ spin1final_state 16 5.83 0
+ spin1final_state 17 6.49 0
+ spin1final_state 18 6.53 0
+ spin1final_state 19 7 0
+ spin1final_state 20 7.58 0
+ spin1final_state 21 8.31 0
+ spin1final_state 22 8.41 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.9 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 15.7 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 22.3 0
+
+ k-points25(128): 0 0.13 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.83 0
+ spin1final_state 6 -7.4 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.09 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.3 0
+ spin1final_state 14 5.04 0
+ spin1final_state 15 5.98 0
+ spin1final_state 16 6.17 0
+ spin1final_state 17 6.23 0
+ spin1final_state 18 6.53 0
+ spin1final_state 19 6.98 0
+ spin1final_state 20 7.26 0
+ spin1final_state 21 7.36 0
+ spin1final_state 22 9.27 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.5 0
+ spin1final_state 27 14 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.3 0
+ spin1final_state 30 16.1 0
+ spin1final_state 31 21.2 0
+ spin1final_state 32 21.9 0
+
+ k-points26(128): 0.0652 0.13 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.66 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.14 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.28 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.97 0
+ spin1final_state 12 -5.86 0
+ spin1final_state 13 2.18 0
+ spin1final_state 14 5.09 0
+ spin1final_state 15 5.44 0
+ spin1final_state 16 5.5 0
+ spin1final_state 17 6.33 0
+ spin1final_state 18 6.74 0
+ spin1final_state 19 6.76 0
+ spin1final_state 20 7.28 0
+ spin1final_state 21 8.29 0
+ spin1final_state 22 8.5 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.3 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.6 0
+ spin1final_state 31 21.7 0
+ spin1final_state 32 21.8 0
+
+ k-points27(128): 0.13 0.13 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.48 0
+ spin1final_state 6 -7.48 0
+ spin1final_state 7 -7.22 0
+ spin1final_state 8 -6.27 0
+ spin1final_state 9 -6.25 0
+ spin1final_state 10 -6.05 0
+ spin1final_state 11 -5.86 0
+ spin1final_state 12 -5.86 0
+ spin1final_state 13 1.96 0
+ spin1final_state 14 4.86 0
+ spin1final_state 15 5.73 0
+ spin1final_state 16 5.78 0
+ spin1final_state 17 5.78 0
+ spin1final_state 18 6.78 0
+ spin1final_state 19 6.93 0
+ spin1final_state 20 7.07 0
+ spin1final_state 21 7.07 0
+ spin1final_state 22 9.09 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 12.7 0
+ spin1final_state 26 13.1 0
+ spin1final_state 27 14.7 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.7 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21.3 0
+ spin1final_state 32 23.2 0
+
+ k-points28(128): 0.195 0.13 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.66 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.14 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.28 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.97 0
+ spin1final_state 12 -5.86 0
+ spin1final_state 13 2.18 0
+ spin1final_state 14 5.09 0
+ spin1final_state 15 5.44 0
+ spin1final_state 16 5.5 0
+ spin1final_state 17 6.33 0
+ spin1final_state 18 6.74 0
+ spin1final_state 19 6.76 0
+ spin1final_state 20 7.28 0
+ spin1final_state 21 8.29 0
+ spin1final_state 22 8.5 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.3 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.6 0
+ spin1final_state 31 21.7 0
+ spin1final_state 32 21.8 0
+
+ k-points29(128): 0 0.195 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.05 0
+ spin1final_state 6 -7.42 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.15 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.43 0
+ spin1final_state 14 5.24 0
+ spin1final_state 15 5.77 0
+ spin1final_state 16 5.84 0
+ spin1final_state 17 6.85 0
+ spin1final_state 18 6.85 0
+ spin1final_state 19 7.27 0
+ spin1final_state 20 7.5 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.4 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 14 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 16.4 0
+ spin1final_state 31 20.1 0
+ spin1final_state 32 22 0
+
+ k-points30(128): 0.0652 0.195 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.85 0
+ spin1final_state 6 -7.43 0
+ spin1final_state 7 -7.09 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.27 0
+ spin1final_state 11 -6.03 0
+ spin1final_state 12 -5.89 0
+ spin1final_state 13 2.31 0
+ spin1final_state 14 5.2 0
+ spin1final_state 15 5.43 0
+ spin1final_state 16 5.83 0
+ spin1final_state 17 6.49 0
+ spin1final_state 18 6.53 0
+ spin1final_state 19 7 0
+ spin1final_state 20 7.58 0
+ spin1final_state 21 8.31 0
+ spin1final_state 22 8.41 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.9 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 15.7 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 22.3 0
+
+ k-points31(128): 0.13 0.195 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.66 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.14 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.28 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.97 0
+ spin1final_state 12 -5.86 0
+ spin1final_state 13 2.18 0
+ spin1final_state 14 5.09 0
+ spin1final_state 15 5.44 0
+ spin1final_state 16 5.5 0
+ spin1final_state 17 6.33 0
+ spin1final_state 18 6.74 0
+ spin1final_state 19 6.76 0
+ spin1final_state 20 7.28 0
+ spin1final_state 21 8.29 0
+ spin1final_state 22 8.5 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.3 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.6 0
+ spin1final_state 31 21.7 0
+ spin1final_state 32 21.8 0
+
+ k-points32(128): 0.195 0.195 0.0261
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.85 0
+ spin1final_state 6 -7.43 0
+ spin1final_state 7 -7.09 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.27 0
+ spin1final_state 11 -6.03 0
+ spin1final_state 12 -5.89 0
+ spin1final_state 13 2.31 0
+ spin1final_state 14 5.2 0
+ spin1final_state 15 5.43 0
+ spin1final_state 16 5.83 0
+ spin1final_state 17 6.49 0
+ spin1final_state 18 6.53 0
+ spin1final_state 19 7 0
+ spin1final_state 20 7.58 0
+ spin1final_state 21 8.31 0
+ spin1final_state 22 8.41 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.9 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 15.7 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 22.3 0
+
+ k-points33(128): 0 0 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.6 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.22 0
+ spin1final_state 6 -7.39 0
+ spin1final_state 7 -7.06 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.28 0
+ spin1final_state 11 -6.24 0
+ spin1final_state 12 -6.01 0
+ spin1final_state 13 2.32 0
+ spin1final_state 14 5.47 0
+ spin1final_state 15 5.47 0
+ spin1final_state 16 6.7 0
+ spin1final_state 17 6.97 0
+ spin1final_state 18 6.97 0
+ spin1final_state 19 7.25 0
+ spin1final_state 20 7.26 0
+ spin1final_state 21 8.23 0
+ spin1final_state 22 8.23 0
+ spin1final_state 23 11.4 0
+ spin1final_state 24 13.3 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.5 0
+ spin1final_state 27 14 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 16.5 0
+ spin1final_state 30 16.5 0
+ spin1final_state 31 19.8 0
+ spin1final_state 32 22.1 0
+
+ k-points34(128): 0.0652 0 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.02 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.17 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.26 0
+ spin1final_state 14 5.14 0
+ spin1final_state 15 5.7 0
+ spin1final_state 16 6 0
+ spin1final_state 17 6.82 0
+ spin1final_state 18 6.96 0
+ spin1final_state 19 7.19 0
+ spin1final_state 20 7.59 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.2 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.2 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points35(128): 0.13 0 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.84 0
+ spin1final_state 6 -7.39 0
+ spin1final_state 7 -7.02 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.1 0
+ spin1final_state 12 -5.87 0
+ spin1final_state 13 2.21 0
+ spin1final_state 14 4.93 0
+ spin1final_state 15 5.9 0
+ spin1final_state 16 6.07 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.57 0
+ spin1final_state 19 7.05 0
+ spin1final_state 20 7.35 0
+ spin1final_state 21 7.55 0
+ spin1final_state 22 9.02 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.9 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.1 0
+ spin1final_state 30 16 0
+ spin1final_state 31 21 0
+ spin1final_state 32 21.9 0
+
+ k-points36(128): 0.195 0 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.02 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.17 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.26 0
+ spin1final_state 14 5.14 0
+ spin1final_state 15 5.7 0
+ spin1final_state 16 6 0
+ spin1final_state 17 6.82 0
+ spin1final_state 18 6.96 0
+ spin1final_state 19 7.19 0
+ spin1final_state 20 7.59 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.2 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.2 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points37(128): 0 0.0652 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.02 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.17 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.26 0
+ spin1final_state 14 5.14 0
+ spin1final_state 15 5.7 0
+ spin1final_state 16 6 0
+ spin1final_state 17 6.82 0
+ spin1final_state 18 6.96 0
+ spin1final_state 19 7.19 0
+ spin1final_state 20 7.59 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.2 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.2 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points38(128): 0.0652 0.0652 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.83 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.08 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.04 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.24 0
+ spin1final_state 14 5.13 0
+ spin1final_state 15 5.24 0
+ spin1final_state 16 5.7 0
+ spin1final_state 17 6.47 0
+ spin1final_state 18 6.57 0
+ spin1final_state 19 7.23 0
+ spin1final_state 20 7.72 0
+ spin1final_state 21 8.3 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 13 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.4 0
+ spin1final_state 28 14.8 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21 0
+ spin1final_state 32 22.7 0
+
+ k-points39(128): 0.13 0.0652 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.11 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.2 0
+ spin1final_state 14 5.02 0
+ spin1final_state 15 5.14 0
+ spin1final_state 16 5.29 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.72 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.55 0
+ spin1final_state 21 8.09 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21.2 0
+ spin1final_state 32 22.2 0
+
+ k-points40(128): 0.195 0.0652 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.83 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.08 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.04 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.24 0
+ spin1final_state 14 5.13 0
+ spin1final_state 15 5.24 0
+ spin1final_state 16 5.7 0
+ spin1final_state 17 6.47 0
+ spin1final_state 18 6.57 0
+ spin1final_state 19 7.23 0
+ spin1final_state 20 7.72 0
+ spin1final_state 21 8.3 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 13 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.4 0
+ spin1final_state 28 14.8 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21 0
+ spin1final_state 32 22.7 0
+
+ k-points41(128): 0 0.13 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.84 0
+ spin1final_state 6 -7.39 0
+ spin1final_state 7 -7.02 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.1 0
+ spin1final_state 12 -5.87 0
+ spin1final_state 13 2.21 0
+ spin1final_state 14 4.93 0
+ spin1final_state 15 5.9 0
+ spin1final_state 16 6.07 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.57 0
+ spin1final_state 19 7.05 0
+ spin1final_state 20 7.35 0
+ spin1final_state 21 7.55 0
+ spin1final_state 22 9.02 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.9 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.1 0
+ spin1final_state 30 16 0
+ spin1final_state 31 21 0
+ spin1final_state 32 21.9 0
+
+ k-points42(128): 0.0652 0.13 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.11 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.2 0
+ spin1final_state 14 5.02 0
+ spin1final_state 15 5.14 0
+ spin1final_state 16 5.29 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.72 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.55 0
+ spin1final_state 21 8.09 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21.2 0
+ spin1final_state 32 22.2 0
+
+ k-points43(128): 0.13 0.13 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.49 0
+ spin1final_state 6 -7.49 0
+ spin1final_state 7 -7.19 0
+ spin1final_state 8 -6.27 0
+ spin1final_state 9 -6.25 0
+ spin1final_state 10 -6.06 0
+ spin1final_state 11 -5.84 0
+ spin1final_state 12 -5.84 0
+ spin1final_state 13 2.07 0
+ spin1final_state 14 4.82 0
+ spin1final_state 15 5.37 0
+ spin1final_state 16 5.37 0
+ spin1final_state 17 5.72 0
+ spin1final_state 18 6.49 0
+ spin1final_state 19 6.51 0
+ spin1final_state 20 7.59 0
+ spin1final_state 21 7.59 0
+ spin1final_state 22 9.08 0
+ spin1final_state 23 12.6 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.7 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.9 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.8 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21.3 0
+ spin1final_state 32 22.6 0
+
+ k-points44(128): 0.195 0.13 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.11 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.2 0
+ spin1final_state 14 5.02 0
+ spin1final_state 15 5.14 0
+ spin1final_state 16 5.29 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.72 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.55 0
+ spin1final_state 21 8.09 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21.2 0
+ spin1final_state 32 22.2 0
+
+ k-points45(128): 0 0.195 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.02 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.17 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.26 0
+ spin1final_state 14 5.14 0
+ spin1final_state 15 5.7 0
+ spin1final_state 16 6 0
+ spin1final_state 17 6.82 0
+ spin1final_state 18 6.96 0
+ spin1final_state 19 7.19 0
+ spin1final_state 20 7.59 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.2 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.2 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points46(128): 0.0652 0.195 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.83 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.08 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.04 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.24 0
+ spin1final_state 14 5.13 0
+ spin1final_state 15 5.24 0
+ spin1final_state 16 5.7 0
+ spin1final_state 17 6.47 0
+ spin1final_state 18 6.57 0
+ spin1final_state 19 7.23 0
+ spin1final_state 20 7.72 0
+ spin1final_state 21 8.3 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 13 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.4 0
+ spin1final_state 28 14.8 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21 0
+ spin1final_state 32 22.7 0
+
+ k-points47(128): 0.13 0.195 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.11 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.2 0
+ spin1final_state 14 5.02 0
+ spin1final_state 15 5.14 0
+ spin1final_state 16 5.29 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.72 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.55 0
+ spin1final_state 21 8.09 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21.2 0
+ spin1final_state 32 22.2 0
+
+ k-points48(128): 0.195 0.195 0.0522
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.83 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.08 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.04 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.24 0
+ spin1final_state 14 5.13 0
+ spin1final_state 15 5.24 0
+ spin1final_state 16 5.7 0
+ spin1final_state 17 6.47 0
+ spin1final_state 18 6.57 0
+ spin1final_state 19 7.23 0
+ spin1final_state 20 7.72 0
+ spin1final_state 21 8.3 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 13 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.4 0
+ spin1final_state 28 14.8 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21 0
+ spin1final_state 32 22.7 0
+
+ k-points49(128): 0 0 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.6 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.16 0
+ spin1final_state 6 -7.38 0
+ spin1final_state 7 -7.08 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.28 0
+ spin1final_state 11 -6.25 0
+ spin1final_state 12 -6.02 0
+ spin1final_state 13 2.1 0
+ spin1final_state 14 5.4 0
+ spin1final_state 15 5.4 0
+ spin1final_state 16 6.56 0
+ spin1final_state 17 7.1 0
+ spin1final_state 18 7.1 0
+ spin1final_state 19 7.24 0
+ spin1final_state 20 7.83 0
+ spin1final_state 21 8.2 0
+ spin1final_state 22 8.2 0
+ spin1final_state 23 11.4 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.5 0
+ spin1final_state 27 14 0
+ spin1final_state 28 15.4 0
+ spin1final_state 29 16.3 0
+ spin1final_state 30 16.3 0
+ spin1final_state 31 20.2 0
+ spin1final_state 32 23 0
+
+ k-points50(128): 0.0652 0 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.98 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.18 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.1 0
+ spin1final_state 14 5.01 0
+ spin1final_state 15 5.64 0
+ spin1final_state 16 6.17 0
+ spin1final_state 17 6.75 0
+ spin1final_state 18 7.07 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.64 0
+ spin1final_state 21 7.69 0
+ spin1final_state 22 8.53 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.8 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.1 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 23.4 0
+
+ k-points51(128): 0.13 0 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.85 0
+ spin1final_state 6 -7.38 0
+ spin1final_state 7 -6.98 0
+ spin1final_state 8 -6.32 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.31 0
+ spin1final_state 11 -6.11 0
+ spin1final_state 12 -5.87 0
+ spin1final_state 13 2.12 0
+ spin1final_state 14 4.79 0
+ spin1final_state 15 5.75 0
+ spin1final_state 16 6.08 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.61 0
+ spin1final_state 19 7.05 0
+ spin1final_state 20 7.43 0
+ spin1final_state 21 7.83 0
+ spin1final_state 22 8.7 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 13 0
+ spin1final_state 25 13.3 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.7 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 20.3 0
+ spin1final_state 32 22.7 0
+
+ k-points52(128): 0.195 0 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.98 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.18 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.1 0
+ spin1final_state 14 5.01 0
+ spin1final_state 15 5.64 0
+ spin1final_state 16 6.17 0
+ spin1final_state 17 6.75 0
+ spin1final_state 18 7.07 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.64 0
+ spin1final_state 21 7.69 0
+ spin1final_state 22 8.53 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.8 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.1 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 23.4 0
+
+ k-points53(128): 0 0.0652 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.98 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.18 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.1 0
+ spin1final_state 14 5.01 0
+ spin1final_state 15 5.64 0
+ spin1final_state 16 6.17 0
+ spin1final_state 17 6.75 0
+ spin1final_state 18 7.07 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.64 0
+ spin1final_state 21 7.69 0
+ spin1final_state 22 8.53 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.8 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.1 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 23.4 0
+
+ k-points54(128): 0.0652 0.0652 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.81 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.06 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.05 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.16 0
+ spin1final_state 14 5.06 0
+ spin1final_state 15 5.09 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.32 0
+ spin1final_state 18 6.62 0
+ spin1final_state 19 7.49 0
+ spin1final_state 20 7.86 0
+ spin1final_state 21 8.17 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.1 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.3 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 21 0
+ spin1final_state 32 23.1 0
+
+ k-points55(128): 0.13 0.0652 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.07 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.23 0
+ spin1final_state 14 4.9 0
+ spin1final_state 15 4.95 0
+ spin1final_state 16 5.15 0
+ spin1final_state 17 6.01 0
+ spin1final_state 18 6.69 0
+ spin1final_state 19 7.35 0
+ spin1final_state 20 7.75 0
+ spin1final_state 21 8 0
+ spin1final_state 22 8.45 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points56(128): 0.195 0.0652 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.81 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.06 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.05 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.16 0
+ spin1final_state 14 5.06 0
+ spin1final_state 15 5.09 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.32 0
+ spin1final_state 18 6.62 0
+ spin1final_state 19 7.49 0
+ spin1final_state 20 7.86 0
+ spin1final_state 21 8.17 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.1 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.3 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 21 0
+ spin1final_state 32 23.1 0
+
+ k-points57(128): 0 0.13 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.85 0
+ spin1final_state 6 -7.38 0
+ spin1final_state 7 -6.98 0
+ spin1final_state 8 -6.32 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.31 0
+ spin1final_state 11 -6.11 0
+ spin1final_state 12 -5.87 0
+ spin1final_state 13 2.12 0
+ spin1final_state 14 4.79 0
+ spin1final_state 15 5.75 0
+ spin1final_state 16 6.08 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.61 0
+ spin1final_state 19 7.05 0
+ spin1final_state 20 7.43 0
+ spin1final_state 21 7.83 0
+ spin1final_state 22 8.7 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 13 0
+ spin1final_state 25 13.3 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.7 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 20.3 0
+ spin1final_state 32 22.7 0
+
+ k-points58(128): 0.0652 0.13 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.07 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.23 0
+ spin1final_state 14 4.9 0
+ spin1final_state 15 4.95 0
+ spin1final_state 16 5.15 0
+ spin1final_state 17 6.01 0
+ spin1final_state 18 6.69 0
+ spin1final_state 19 7.35 0
+ spin1final_state 20 7.75 0
+ spin1final_state 21 8 0
+ spin1final_state 22 8.45 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points59(128): 0.13 0.13 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.5 0
+ spin1final_state 6 -7.5 0
+ spin1final_state 7 -7.15 0
+ spin1final_state 8 -6.26 0
+ spin1final_state 9 -6.25 0
+ spin1final_state 10 -6.07 0
+ spin1final_state 11 -5.83 0
+ spin1final_state 12 -5.83 0
+ spin1final_state 13 2.19 0
+ spin1final_state 14 4.78 0
+ spin1final_state 15 5.1 0
+ spin1final_state 16 5.1 0
+ spin1final_state 17 5.72 0
+ spin1final_state 18 6.12 0
+ spin1final_state 19 6.26 0
+ spin1final_state 20 7.99 0
+ spin1final_state 21 7.99 0
+ spin1final_state 22 9.08 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13 0
+ spin1final_state 26 14.2 0
+ spin1final_state 27 15.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.8 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 21.4 0
+ spin1final_state 32 21.9 0
+
+ k-points60(128): 0.195 0.13 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.07 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.23 0
+ spin1final_state 14 4.9 0
+ spin1final_state 15 4.95 0
+ spin1final_state 16 5.15 0
+ spin1final_state 17 6.01 0
+ spin1final_state 18 6.69 0
+ spin1final_state 19 7.35 0
+ spin1final_state 20 7.75 0
+ spin1final_state 21 8 0
+ spin1final_state 22 8.45 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points61(128): 0 0.195 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.98 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.18 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.1 0
+ spin1final_state 14 5.01 0
+ spin1final_state 15 5.64 0
+ spin1final_state 16 6.17 0
+ spin1final_state 17 6.75 0
+ spin1final_state 18 7.07 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.64 0
+ spin1final_state 21 7.69 0
+ spin1final_state 22 8.53 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.8 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.1 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 23.4 0
+
+ k-points62(128): 0.0652 0.195 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.81 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.06 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.05 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.16 0
+ spin1final_state 14 5.06 0
+ spin1final_state 15 5.09 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.32 0
+ spin1final_state 18 6.62 0
+ spin1final_state 19 7.49 0
+ spin1final_state 20 7.86 0
+ spin1final_state 21 8.17 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.1 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.3 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 21 0
+ spin1final_state 32 23.1 0
+
+ k-points63(128): 0.13 0.195 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.07 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.23 0
+ spin1final_state 14 4.9 0
+ spin1final_state 15 4.95 0
+ spin1final_state 16 5.15 0
+ spin1final_state 17 6.01 0
+ spin1final_state 18 6.69 0
+ spin1final_state 19 7.35 0
+ spin1final_state 20 7.75 0
+ spin1final_state 21 8 0
+ spin1final_state 22 8.45 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points64(128): 0.195 0.195 0.0783
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.81 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.06 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.05 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.16 0
+ spin1final_state 14 5.06 0
+ spin1final_state 15 5.09 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.32 0
+ spin1final_state 18 6.62 0
+ spin1final_state 19 7.49 0
+ spin1final_state 20 7.86 0
+ spin1final_state 21 8.17 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.1 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.3 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 21 0
+ spin1final_state 32 23.1 0
+
+ k-points65(128): 0 0 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.6 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.13 0
+ spin1final_state 6 -7.38 0
+ spin1final_state 7 -7.09 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.28 0
+ spin1final_state 11 -6.25 0
+ spin1final_state 12 -6.02 0
+ spin1final_state 13 2.02 0
+ spin1final_state 14 5.37 0
+ spin1final_state 15 5.37 0
+ spin1final_state 16 6.49 0
+ spin1final_state 17 7.15 0
+ spin1final_state 18 7.15 0
+ spin1final_state 19 7.23 0
+ spin1final_state 20 8.1 0
+ spin1final_state 21 8.19 0
+ spin1final_state 22 8.19 0
+ spin1final_state 23 11.4 0
+ spin1final_state 24 12.2 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.5 0
+ spin1final_state 27 14 0
+ spin1final_state 28 15.6 0
+ spin1final_state 29 16.2 0
+ spin1final_state 30 16.2 0
+ spin1final_state 31 20.4 0
+ spin1final_state 32 23.2 0
+
+ k-points66(128): 0.0652 0 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.97 0
+ spin1final_state 6 -7.4 0
+ spin1final_state 7 -7.03 0
+ spin1final_state 8 -6.32 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.19 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.04 0
+ spin1final_state 14 4.96 0
+ spin1final_state 15 5.61 0
+ spin1final_state 16 6.24 0
+ spin1final_state 17 6.71 0
+ spin1final_state 18 7.12 0
+ spin1final_state 19 7.13 0
+ spin1final_state 20 7.64 0
+ spin1final_state 21 7.74 0
+ spin1final_state 22 8.56 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.9 0
+ spin1final_state 25 13.4 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.2 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 16 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 23.6 0
+
+ k-points67(128): 0.13 0 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.85 0
+ spin1final_state 6 -7.38 0
+ spin1final_state 7 -6.96 0
+ spin1final_state 8 -6.32 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.31 0
+ spin1final_state 11 -6.11 0
+ spin1final_state 12 -5.87 0
+ spin1final_state 13 2.09 0
+ spin1final_state 14 4.73 0
+ spin1final_state 15 5.7 0
+ spin1final_state 16 6.05 0
+ spin1final_state 17 6.18 0
+ spin1final_state 18 6.63 0
+ spin1final_state 19 7.04 0
+ spin1final_state 20 7.47 0
+ spin1final_state 21 8.02 0
+ spin1final_state 22 8.49 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 13 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.9 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 20 0
+ spin1final_state 32 23 0
+
+ k-points68(128): 0.195 0 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.97 0
+ spin1final_state 6 -7.4 0
+ spin1final_state 7 -7.03 0
+ spin1final_state 8 -6.32 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.19 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.04 0
+ spin1final_state 14 4.96 0
+ spin1final_state 15 5.61 0
+ spin1final_state 16 6.24 0
+ spin1final_state 17 6.71 0
+ spin1final_state 18 7.12 0
+ spin1final_state 19 7.13 0
+ spin1final_state 20 7.64 0
+ spin1final_state 21 7.74 0
+ spin1final_state 22 8.56 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.9 0
+ spin1final_state 25 13.4 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.2 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 16 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 23.6 0
+
+ k-points69(128): 0 0.0652 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.97 0
+ spin1final_state 6 -7.4 0
+ spin1final_state 7 -7.03 0
+ spin1final_state 8 -6.32 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.19 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.04 0
+ spin1final_state 14 4.96 0
+ spin1final_state 15 5.61 0
+ spin1final_state 16 6.24 0
+ spin1final_state 17 6.71 0
+ spin1final_state 18 7.12 0
+ spin1final_state 19 7.13 0
+ spin1final_state 20 7.64 0
+ spin1final_state 21 7.74 0
+ spin1final_state 22 8.56 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.9 0
+ spin1final_state 25 13.4 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.2 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 16 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 23.6 0
+
+ k-points70(128): 0.0652 0.0652 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.8 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.25 0
+ spin1final_state 11 -6.06 0
+ spin1final_state 12 -5.87 0
+ spin1final_state 13 2.13 0
+ spin1final_state 14 5.03 0
+ spin1final_state 15 5.03 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.25 0
+ spin1final_state 18 6.63 0
+ spin1final_state 19 7.6 0
+ spin1final_state 20 7.92 0
+ spin1final_state 21 8.1 0
+ spin1final_state 22 8.3 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.1 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.7 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 21 0
+ spin1final_state 32 23.1 0
+
+ k-points71(128): 0.13 0.0652 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.68 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.84 0
+ spin1final_state 13 2.23 0
+ spin1final_state 14 4.83 0
+ spin1final_state 15 4.89 0
+ spin1final_state 16 5.12 0
+ spin1final_state 17 5.97 0
+ spin1final_state 18 6.67 0
+ spin1final_state 19 7.36 0
+ spin1final_state 20 7.82 0
+ spin1final_state 21 8.03 0
+ spin1final_state 22 8.44 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.8 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 14.3 0
+ spin1final_state 27 14.8 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 20.4 0
+ spin1final_state 32 22.5 0
+
+ k-points72(128): 0.195 0.0652 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.8 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.25 0
+ spin1final_state 11 -6.06 0
+ spin1final_state 12 -5.87 0
+ spin1final_state 13 2.13 0
+ spin1final_state 14 5.03 0
+ spin1final_state 15 5.03 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.25 0
+ spin1final_state 18 6.63 0
+ spin1final_state 19 7.6 0
+ spin1final_state 20 7.92 0
+ spin1final_state 21 8.1 0
+ spin1final_state 22 8.3 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.1 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.7 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 21 0
+ spin1final_state 32 23.1 0
+
+ k-points73(128): 0 0.13 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.85 0
+ spin1final_state 6 -7.38 0
+ spin1final_state 7 -6.96 0
+ spin1final_state 8 -6.32 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.31 0
+ spin1final_state 11 -6.11 0
+ spin1final_state 12 -5.87 0
+ spin1final_state 13 2.09 0
+ spin1final_state 14 4.73 0
+ spin1final_state 15 5.7 0
+ spin1final_state 16 6.05 0
+ spin1final_state 17 6.18 0
+ spin1final_state 18 6.63 0
+ spin1final_state 19 7.04 0
+ spin1final_state 20 7.47 0
+ spin1final_state 21 8.02 0
+ spin1final_state 22 8.49 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 13 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.9 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 20 0
+ spin1final_state 32 23 0
+
+ k-points74(128): 0.0652 0.13 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.68 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.84 0
+ spin1final_state 13 2.23 0
+ spin1final_state 14 4.83 0
+ spin1final_state 15 4.89 0
+ spin1final_state 16 5.12 0
+ spin1final_state 17 5.97 0
+ spin1final_state 18 6.67 0
+ spin1final_state 19 7.36 0
+ spin1final_state 20 7.82 0
+ spin1final_state 21 8.03 0
+ spin1final_state 22 8.44 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.8 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 14.3 0
+ spin1final_state 27 14.8 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 20.4 0
+ spin1final_state 32 22.5 0
+
+ k-points75(128): 0.13 0.13 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.5 0
+ spin1final_state 6 -7.5 0
+ spin1final_state 7 -7.14 0
+ spin1final_state 8 -6.26 0
+ spin1final_state 9 -6.25 0
+ spin1final_state 10 -6.07 0
+ spin1final_state 11 -5.82 0
+ spin1final_state 12 -5.82 0
+ spin1final_state 13 2.24 0
+ spin1final_state 14 4.76 0
+ spin1final_state 15 5.01 0
+ spin1final_state 16 5.01 0
+ spin1final_state 17 5.72 0
+ spin1final_state 18 5.96 0
+ spin1final_state 19 6.17 0
+ spin1final_state 20 8.14 0
+ spin1final_state 21 8.14 0
+ spin1final_state 22 9.08 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.4 0
+ spin1final_state 25 13.1 0
+ spin1final_state 26 14.5 0
+ spin1final_state 27 15.2 0
+ spin1final_state 28 15.2 0
+ spin1final_state 29 15.8 0
+ spin1final_state 30 16 0
+ spin1final_state 31 21.6 0
+ spin1final_state 32 21.6 0
+
+ k-points76(128): 0.195 0.13 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.68 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.84 0
+ spin1final_state 13 2.23 0
+ spin1final_state 14 4.83 0
+ spin1final_state 15 4.89 0
+ spin1final_state 16 5.12 0
+ spin1final_state 17 5.97 0
+ spin1final_state 18 6.67 0
+ spin1final_state 19 7.36 0
+ spin1final_state 20 7.82 0
+ spin1final_state 21 8.03 0
+ spin1final_state 22 8.44 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.8 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 14.3 0
+ spin1final_state 27 14.8 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 20.4 0
+ spin1final_state 32 22.5 0
+
+ k-points77(128): 0 0.195 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.97 0
+ spin1final_state 6 -7.4 0
+ spin1final_state 7 -7.03 0
+ spin1final_state 8 -6.32 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.19 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.04 0
+ spin1final_state 14 4.96 0
+ spin1final_state 15 5.61 0
+ spin1final_state 16 6.24 0
+ spin1final_state 17 6.71 0
+ spin1final_state 18 7.12 0
+ spin1final_state 19 7.13 0
+ spin1final_state 20 7.64 0
+ spin1final_state 21 7.74 0
+ spin1final_state 22 8.56 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.9 0
+ spin1final_state 25 13.4 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.2 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 16 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 23.6 0
+
+ k-points78(128): 0.0652 0.195 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.8 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.25 0
+ spin1final_state 11 -6.06 0
+ spin1final_state 12 -5.87 0
+ spin1final_state 13 2.13 0
+ spin1final_state 14 5.03 0
+ spin1final_state 15 5.03 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.25 0
+ spin1final_state 18 6.63 0
+ spin1final_state 19 7.6 0
+ spin1final_state 20 7.92 0
+ spin1final_state 21 8.1 0
+ spin1final_state 22 8.3 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.1 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.7 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 21 0
+ spin1final_state 32 23.1 0
+
+ k-points79(128): 0.13 0.195 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.68 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.84 0
+ spin1final_state 13 2.23 0
+ spin1final_state 14 4.83 0
+ spin1final_state 15 4.89 0
+ spin1final_state 16 5.12 0
+ spin1final_state 17 5.97 0
+ spin1final_state 18 6.67 0
+ spin1final_state 19 7.36 0
+ spin1final_state 20 7.82 0
+ spin1final_state 21 8.03 0
+ spin1final_state 22 8.44 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.8 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 14.3 0
+ spin1final_state 27 14.8 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 20.4 0
+ spin1final_state 32 22.5 0
+
+ k-points80(128): 0.195 0.195 0.104
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.8 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.25 0
+ spin1final_state 11 -6.06 0
+ spin1final_state 12 -5.87 0
+ spin1final_state 13 2.13 0
+ spin1final_state 14 5.03 0
+ spin1final_state 15 5.03 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.25 0
+ spin1final_state 18 6.63 0
+ spin1final_state 19 7.6 0
+ spin1final_state 20 7.92 0
+ spin1final_state 21 8.1 0
+ spin1final_state 22 8.3 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.1 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.7 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 21 0
+ spin1final_state 32 23.1 0
+
+ k-points81(128): 0 0 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.6 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.16 0
+ spin1final_state 6 -7.38 0
+ spin1final_state 7 -7.08 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.28 0
+ spin1final_state 11 -6.25 0
+ spin1final_state 12 -6.02 0
+ spin1final_state 13 2.1 0
+ spin1final_state 14 5.4 0
+ spin1final_state 15 5.4 0
+ spin1final_state 16 6.56 0
+ spin1final_state 17 7.1 0
+ spin1final_state 18 7.1 0
+ spin1final_state 19 7.24 0
+ spin1final_state 20 7.83 0
+ spin1final_state 21 8.2 0
+ spin1final_state 22 8.2 0
+ spin1final_state 23 11.4 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.5 0
+ spin1final_state 27 14 0
+ spin1final_state 28 15.4 0
+ spin1final_state 29 16.3 0
+ spin1final_state 30 16.3 0
+ spin1final_state 31 20.2 0
+ spin1final_state 32 23 0
+
+ k-points82(128): 0.0652 0 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.98 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.18 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.1 0
+ spin1final_state 14 5.01 0
+ spin1final_state 15 5.64 0
+ spin1final_state 16 6.17 0
+ spin1final_state 17 6.75 0
+ spin1final_state 18 7.07 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.64 0
+ spin1final_state 21 7.69 0
+ spin1final_state 22 8.53 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.8 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.1 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 23.4 0
+
+ k-points83(128): 0.13 0 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.85 0
+ spin1final_state 6 -7.38 0
+ spin1final_state 7 -6.98 0
+ spin1final_state 8 -6.32 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.31 0
+ spin1final_state 11 -6.11 0
+ spin1final_state 12 -5.87 0
+ spin1final_state 13 2.12 0
+ spin1final_state 14 4.79 0
+ spin1final_state 15 5.75 0
+ spin1final_state 16 6.08 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.61 0
+ spin1final_state 19 7.05 0
+ spin1final_state 20 7.43 0
+ spin1final_state 21 7.83 0
+ spin1final_state 22 8.7 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 13 0
+ spin1final_state 25 13.3 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.7 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 20.3 0
+ spin1final_state 32 22.7 0
+
+ k-points84(128): 0.195 0 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.98 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.18 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.1 0
+ spin1final_state 14 5.01 0
+ spin1final_state 15 5.64 0
+ spin1final_state 16 6.17 0
+ spin1final_state 17 6.75 0
+ spin1final_state 18 7.07 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.64 0
+ spin1final_state 21 7.69 0
+ spin1final_state 22 8.53 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.8 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.1 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 23.4 0
+
+ k-points85(128): 0 0.0652 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.98 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.18 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.1 0
+ spin1final_state 14 5.01 0
+ spin1final_state 15 5.64 0
+ spin1final_state 16 6.17 0
+ spin1final_state 17 6.75 0
+ spin1final_state 18 7.07 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.64 0
+ spin1final_state 21 7.69 0
+ spin1final_state 22 8.53 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.8 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.1 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 23.4 0
+
+ k-points86(128): 0.0652 0.0652 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.81 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.06 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.05 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.16 0
+ spin1final_state 14 5.06 0
+ spin1final_state 15 5.09 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.32 0
+ spin1final_state 18 6.62 0
+ spin1final_state 19 7.49 0
+ spin1final_state 20 7.86 0
+ spin1final_state 21 8.17 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.1 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.3 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 21 0
+ spin1final_state 32 23.1 0
+
+ k-points87(128): 0.13 0.0652 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.07 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.23 0
+ spin1final_state 14 4.9 0
+ spin1final_state 15 4.95 0
+ spin1final_state 16 5.15 0
+ spin1final_state 17 6.01 0
+ spin1final_state 18 6.69 0
+ spin1final_state 19 7.35 0
+ spin1final_state 20 7.75 0
+ spin1final_state 21 8 0
+ spin1final_state 22 8.45 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points88(128): 0.195 0.0652 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.81 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.06 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.05 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.16 0
+ spin1final_state 14 5.06 0
+ spin1final_state 15 5.09 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.32 0
+ spin1final_state 18 6.62 0
+ spin1final_state 19 7.49 0
+ spin1final_state 20 7.86 0
+ spin1final_state 21 8.17 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.1 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.3 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 21 0
+ spin1final_state 32 23.1 0
+
+ k-points89(128): 0 0.13 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.85 0
+ spin1final_state 6 -7.38 0
+ spin1final_state 7 -6.98 0
+ spin1final_state 8 -6.32 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.31 0
+ spin1final_state 11 -6.11 0
+ spin1final_state 12 -5.87 0
+ spin1final_state 13 2.12 0
+ spin1final_state 14 4.79 0
+ spin1final_state 15 5.75 0
+ spin1final_state 16 6.08 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.61 0
+ spin1final_state 19 7.05 0
+ spin1final_state 20 7.43 0
+ spin1final_state 21 7.83 0
+ spin1final_state 22 8.7 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 13 0
+ spin1final_state 25 13.3 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.7 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 20.3 0
+ spin1final_state 32 22.7 0
+
+ k-points90(128): 0.0652 0.13 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.07 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.23 0
+ spin1final_state 14 4.9 0
+ spin1final_state 15 4.95 0
+ spin1final_state 16 5.15 0
+ spin1final_state 17 6.01 0
+ spin1final_state 18 6.69 0
+ spin1final_state 19 7.35 0
+ spin1final_state 20 7.75 0
+ spin1final_state 21 8 0
+ spin1final_state 22 8.45 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points91(128): 0.13 0.13 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.5 0
+ spin1final_state 6 -7.5 0
+ spin1final_state 7 -7.15 0
+ spin1final_state 8 -6.26 0
+ spin1final_state 9 -6.25 0
+ spin1final_state 10 -6.07 0
+ spin1final_state 11 -5.83 0
+ spin1final_state 12 -5.83 0
+ spin1final_state 13 2.19 0
+ spin1final_state 14 4.78 0
+ spin1final_state 15 5.1 0
+ spin1final_state 16 5.1 0
+ spin1final_state 17 5.72 0
+ spin1final_state 18 6.12 0
+ spin1final_state 19 6.26 0
+ spin1final_state 20 7.99 0
+ spin1final_state 21 7.99 0
+ spin1final_state 22 9.08 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13 0
+ spin1final_state 26 14.2 0
+ spin1final_state 27 15.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.8 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 21.4 0
+ spin1final_state 32 21.9 0
+
+ k-points92(128): 0.195 0.13 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.07 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.23 0
+ spin1final_state 14 4.9 0
+ spin1final_state 15 4.95 0
+ spin1final_state 16 5.15 0
+ spin1final_state 17 6.01 0
+ spin1final_state 18 6.69 0
+ spin1final_state 19 7.35 0
+ spin1final_state 20 7.75 0
+ spin1final_state 21 8 0
+ spin1final_state 22 8.45 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points93(128): 0 0.195 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.98 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.18 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.1 0
+ spin1final_state 14 5.01 0
+ spin1final_state 15 5.64 0
+ spin1final_state 16 6.17 0
+ spin1final_state 17 6.75 0
+ spin1final_state 18 7.07 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.64 0
+ spin1final_state 21 7.69 0
+ spin1final_state 22 8.53 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.8 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.1 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 23.4 0
+
+ k-points94(128): 0.0652 0.195 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.81 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.06 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.05 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.16 0
+ spin1final_state 14 5.06 0
+ spin1final_state 15 5.09 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.32 0
+ spin1final_state 18 6.62 0
+ spin1final_state 19 7.49 0
+ spin1final_state 20 7.86 0
+ spin1final_state 21 8.17 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.1 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.3 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 21 0
+ spin1final_state 32 23.1 0
+
+ k-points95(128): 0.13 0.195 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.07 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.23 0
+ spin1final_state 14 4.9 0
+ spin1final_state 15 4.95 0
+ spin1final_state 16 5.15 0
+ spin1final_state 17 6.01 0
+ spin1final_state 18 6.69 0
+ spin1final_state 19 7.35 0
+ spin1final_state 20 7.75 0
+ spin1final_state 21 8 0
+ spin1final_state 22 8.45 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points96(128): 0.195 0.195 0.131
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.81 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.06 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.05 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.16 0
+ spin1final_state 14 5.06 0
+ spin1final_state 15 5.09 0
+ spin1final_state 16 5.65 0
+ spin1final_state 17 6.32 0
+ spin1final_state 18 6.62 0
+ spin1final_state 19 7.49 0
+ spin1final_state 20 7.86 0
+ spin1final_state 21 8.17 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.2 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.1 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.6 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.3 0
+ spin1final_state 30 15.9 0
+ spin1final_state 31 21 0
+ spin1final_state 32 23.1 0
+
+ k-points97(128): 0 0 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.6 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.22 0
+ spin1final_state 6 -7.39 0
+ spin1final_state 7 -7.06 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.28 0
+ spin1final_state 11 -6.24 0
+ spin1final_state 12 -6.01 0
+ spin1final_state 13 2.32 0
+ spin1final_state 14 5.47 0
+ spin1final_state 15 5.47 0
+ spin1final_state 16 6.7 0
+ spin1final_state 17 6.97 0
+ spin1final_state 18 6.97 0
+ spin1final_state 19 7.25 0
+ spin1final_state 20 7.26 0
+ spin1final_state 21 8.23 0
+ spin1final_state 22 8.23 0
+ spin1final_state 23 11.4 0
+ spin1final_state 24 13.3 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.5 0
+ spin1final_state 27 14 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 16.5 0
+ spin1final_state 30 16.5 0
+ spin1final_state 31 19.8 0
+ spin1final_state 32 22.1 0
+
+ k-points98(128): 0.0652 0 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.02 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.17 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.26 0
+ spin1final_state 14 5.14 0
+ spin1final_state 15 5.7 0
+ spin1final_state 16 6 0
+ spin1final_state 17 6.82 0
+ spin1final_state 18 6.96 0
+ spin1final_state 19 7.19 0
+ spin1final_state 20 7.59 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.2 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.2 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points99(128): 0.13 0 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.84 0
+ spin1final_state 6 -7.39 0
+ spin1final_state 7 -7.02 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.1 0
+ spin1final_state 12 -5.87 0
+ spin1final_state 13 2.21 0
+ spin1final_state 14 4.93 0
+ spin1final_state 15 5.9 0
+ spin1final_state 16 6.07 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.57 0
+ spin1final_state 19 7.05 0
+ spin1final_state 20 7.35 0
+ spin1final_state 21 7.55 0
+ spin1final_state 22 9.02 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.9 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.1 0
+ spin1final_state 30 16 0
+ spin1final_state 31 21 0
+ spin1final_state 32 21.9 0
+
+ k-points100(128): 0.195 0 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.02 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.17 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.26 0
+ spin1final_state 14 5.14 0
+ spin1final_state 15 5.7 0
+ spin1final_state 16 6 0
+ spin1final_state 17 6.82 0
+ spin1final_state 18 6.96 0
+ spin1final_state 19 7.19 0
+ spin1final_state 20 7.59 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.2 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.2 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points101(128): 0 0.0652 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.02 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.17 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.26 0
+ spin1final_state 14 5.14 0
+ spin1final_state 15 5.7 0
+ spin1final_state 16 6 0
+ spin1final_state 17 6.82 0
+ spin1final_state 18 6.96 0
+ spin1final_state 19 7.19 0
+ spin1final_state 20 7.59 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.2 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.2 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points102(128): 0.0652 0.0652 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.83 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.08 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.04 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.24 0
+ spin1final_state 14 5.13 0
+ spin1final_state 15 5.24 0
+ spin1final_state 16 5.7 0
+ spin1final_state 17 6.47 0
+ spin1final_state 18 6.57 0
+ spin1final_state 19 7.23 0
+ spin1final_state 20 7.72 0
+ spin1final_state 21 8.3 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 13 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.4 0
+ spin1final_state 28 14.8 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21 0
+ spin1final_state 32 22.7 0
+
+ k-points103(128): 0.13 0.0652 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.11 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.2 0
+ spin1final_state 14 5.02 0
+ spin1final_state 15 5.14 0
+ spin1final_state 16 5.29 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.72 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.55 0
+ spin1final_state 21 8.09 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21.2 0
+ spin1final_state 32 22.2 0
+
+ k-points104(128): 0.195 0.0652 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.83 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.08 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.04 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.24 0
+ spin1final_state 14 5.13 0
+ spin1final_state 15 5.24 0
+ spin1final_state 16 5.7 0
+ spin1final_state 17 6.47 0
+ spin1final_state 18 6.57 0
+ spin1final_state 19 7.23 0
+ spin1final_state 20 7.72 0
+ spin1final_state 21 8.3 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 13 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.4 0
+ spin1final_state 28 14.8 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21 0
+ spin1final_state 32 22.7 0
+
+ k-points105(128): 0 0.13 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.84 0
+ spin1final_state 6 -7.39 0
+ spin1final_state 7 -7.02 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.1 0
+ spin1final_state 12 -5.87 0
+ spin1final_state 13 2.21 0
+ spin1final_state 14 4.93 0
+ spin1final_state 15 5.9 0
+ spin1final_state 16 6.07 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.57 0
+ spin1final_state 19 7.05 0
+ spin1final_state 20 7.35 0
+ spin1final_state 21 7.55 0
+ spin1final_state 22 9.02 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.9 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.1 0
+ spin1final_state 30 16 0
+ spin1final_state 31 21 0
+ spin1final_state 32 21.9 0
+
+ k-points106(128): 0.0652 0.13 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.11 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.2 0
+ spin1final_state 14 5.02 0
+ spin1final_state 15 5.14 0
+ spin1final_state 16 5.29 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.72 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.55 0
+ spin1final_state 21 8.09 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21.2 0
+ spin1final_state 32 22.2 0
+
+ k-points107(128): 0.13 0.13 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.49 0
+ spin1final_state 6 -7.49 0
+ spin1final_state 7 -7.19 0
+ spin1final_state 8 -6.27 0
+ spin1final_state 9 -6.25 0
+ spin1final_state 10 -6.06 0
+ spin1final_state 11 -5.84 0
+ spin1final_state 12 -5.84 0
+ spin1final_state 13 2.07 0
+ spin1final_state 14 4.82 0
+ spin1final_state 15 5.37 0
+ spin1final_state 16 5.37 0
+ spin1final_state 17 5.72 0
+ spin1final_state 18 6.49 0
+ spin1final_state 19 6.51 0
+ spin1final_state 20 7.59 0
+ spin1final_state 21 7.59 0
+ spin1final_state 22 9.08 0
+ spin1final_state 23 12.6 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.7 0
+ spin1final_state 26 13.6 0
+ spin1final_state 27 14.9 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.8 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21.3 0
+ spin1final_state 32 22.6 0
+
+ k-points108(128): 0.195 0.13 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.11 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.2 0
+ spin1final_state 14 5.02 0
+ spin1final_state 15 5.14 0
+ spin1final_state 16 5.29 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.72 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.55 0
+ spin1final_state 21 8.09 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21.2 0
+ spin1final_state 32 22.2 0
+
+ k-points109(128): 0 0.195 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.02 0
+ spin1final_state 6 -7.41 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.17 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.26 0
+ spin1final_state 14 5.14 0
+ spin1final_state 15 5.7 0
+ spin1final_state 16 6 0
+ spin1final_state 17 6.82 0
+ spin1final_state 18 6.96 0
+ spin1final_state 19 7.19 0
+ spin1final_state 20 7.59 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.2 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 16.2 0
+ spin1final_state 31 20.7 0
+ spin1final_state 32 22.5 0
+
+ k-points110(128): 0.0652 0.195 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.83 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.08 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.04 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.24 0
+ spin1final_state 14 5.13 0
+ spin1final_state 15 5.24 0
+ spin1final_state 16 5.7 0
+ spin1final_state 17 6.47 0
+ spin1final_state 18 6.57 0
+ spin1final_state 19 7.23 0
+ spin1final_state 20 7.72 0
+ spin1final_state 21 8.3 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 13 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.4 0
+ spin1final_state 28 14.8 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21 0
+ spin1final_state 32 22.7 0
+
+ k-points111(128): 0.13 0.195 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.67 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.11 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.27 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.96 0
+ spin1final_state 12 -5.85 0
+ spin1final_state 13 2.2 0
+ spin1final_state 14 5.02 0
+ spin1final_state 15 5.14 0
+ spin1final_state 16 5.29 0
+ spin1final_state 17 6.15 0
+ spin1final_state 18 6.72 0
+ spin1final_state 19 7.15 0
+ spin1final_state 20 7.55 0
+ spin1final_state 21 8.09 0
+ spin1final_state 22 8.46 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.8 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21.2 0
+ spin1final_state 32 22.2 0
+
+ k-points112(128): 0.195 0.195 0.157
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.83 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.08 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.3 0
+ spin1final_state 10 -6.26 0
+ spin1final_state 11 -6.04 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.24 0
+ spin1final_state 14 5.13 0
+ spin1final_state 15 5.24 0
+ spin1final_state 16 5.7 0
+ spin1final_state 17 6.47 0
+ spin1final_state 18 6.57 0
+ spin1final_state 19 7.23 0
+ spin1final_state 20 7.72 0
+ spin1final_state 21 8.3 0
+ spin1final_state 22 8.31 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 13 0
+ spin1final_state 26 14.1 0
+ spin1final_state 27 14.4 0
+ spin1final_state 28 14.8 0
+ spin1final_state 29 15.4 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21 0
+ spin1final_state 32 22.7 0
+
+ k-points113(128): 0 0 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.6 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.27 0
+ spin1final_state 6 -7.4 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.28 0
+ spin1final_state 11 -6.23 0
+ spin1final_state 12 -6 0
+ spin1final_state 13 2.57 0
+ spin1final_state 14 5.55 0
+ spin1final_state 15 5.55 0
+ spin1final_state 16 6.61 0
+ spin1final_state 17 6.83 0
+ spin1final_state 18 6.83 0
+ spin1final_state 19 6.96 0
+ spin1final_state 20 7.27 0
+ spin1final_state 21 8.25 0
+ spin1final_state 22 8.25 0
+ spin1final_state 23 11.4 0
+ spin1final_state 24 13.4 0
+ spin1final_state 25 13.4 0
+ spin1final_state 26 14 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 16.6 0
+ spin1final_state 30 16.6 0
+ spin1final_state 31 19.1 0
+ spin1final_state 32 21.4 0
+
+ k-points114(128): 0.0652 0 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.05 0
+ spin1final_state 6 -7.42 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.15 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.43 0
+ spin1final_state 14 5.24 0
+ spin1final_state 15 5.77 0
+ spin1final_state 16 5.84 0
+ spin1final_state 17 6.85 0
+ spin1final_state 18 6.85 0
+ spin1final_state 19 7.27 0
+ spin1final_state 20 7.5 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.4 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 14 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 16.4 0
+ spin1final_state 31 20.1 0
+ spin1final_state 32 22 0
+
+ k-points115(128): 0.13 0 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.83 0
+ spin1final_state 6 -7.4 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.09 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.3 0
+ spin1final_state 14 5.04 0
+ spin1final_state 15 5.98 0
+ spin1final_state 16 6.17 0
+ spin1final_state 17 6.23 0
+ spin1final_state 18 6.53 0
+ spin1final_state 19 6.98 0
+ spin1final_state 20 7.26 0
+ spin1final_state 21 7.36 0
+ spin1final_state 22 9.27 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.5 0
+ spin1final_state 27 14 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.3 0
+ spin1final_state 30 16.1 0
+ spin1final_state 31 21.2 0
+ spin1final_state 32 21.9 0
+
+ k-points116(128): 0.195 0 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.05 0
+ spin1final_state 6 -7.42 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.15 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.43 0
+ spin1final_state 14 5.24 0
+ spin1final_state 15 5.77 0
+ spin1final_state 16 5.84 0
+ spin1final_state 17 6.85 0
+ spin1final_state 18 6.85 0
+ spin1final_state 19 7.27 0
+ spin1final_state 20 7.5 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.4 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 14 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 16.4 0
+ spin1final_state 31 20.1 0
+ spin1final_state 32 22 0
+
+ k-points117(128): 0 0.0652 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.05 0
+ spin1final_state 6 -7.42 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.15 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.43 0
+ spin1final_state 14 5.24 0
+ spin1final_state 15 5.77 0
+ spin1final_state 16 5.84 0
+ spin1final_state 17 6.85 0
+ spin1final_state 18 6.85 0
+ spin1final_state 19 7.27 0
+ spin1final_state 20 7.5 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.4 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 14 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 16.4 0
+ spin1final_state 31 20.1 0
+ spin1final_state 32 22 0
+
+ k-points118(128): 0.0652 0.0652 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.85 0
+ spin1final_state 6 -7.43 0
+ spin1final_state 7 -7.09 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.27 0
+ spin1final_state 11 -6.03 0
+ spin1final_state 12 -5.89 0
+ spin1final_state 13 2.31 0
+ spin1final_state 14 5.2 0
+ spin1final_state 15 5.43 0
+ spin1final_state 16 5.83 0
+ spin1final_state 17 6.49 0
+ spin1final_state 18 6.53 0
+ spin1final_state 19 7 0
+ spin1final_state 20 7.58 0
+ spin1final_state 21 8.31 0
+ spin1final_state 22 8.41 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.9 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 15.7 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 22.3 0
+
+ k-points119(128): 0.13 0.0652 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.66 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.14 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.28 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.97 0
+ spin1final_state 12 -5.86 0
+ spin1final_state 13 2.18 0
+ spin1final_state 14 5.09 0
+ spin1final_state 15 5.44 0
+ spin1final_state 16 5.5 0
+ spin1final_state 17 6.33 0
+ spin1final_state 18 6.74 0
+ spin1final_state 19 6.76 0
+ spin1final_state 20 7.28 0
+ spin1final_state 21 8.29 0
+ spin1final_state 22 8.5 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.3 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.6 0
+ spin1final_state 31 21.7 0
+ spin1final_state 32 21.8 0
+
+ k-points120(128): 0.195 0.0652 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.85 0
+ spin1final_state 6 -7.43 0
+ spin1final_state 7 -7.09 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.27 0
+ spin1final_state 11 -6.03 0
+ spin1final_state 12 -5.89 0
+ spin1final_state 13 2.31 0
+ spin1final_state 14 5.2 0
+ spin1final_state 15 5.43 0
+ spin1final_state 16 5.83 0
+ spin1final_state 17 6.49 0
+ spin1final_state 18 6.53 0
+ spin1final_state 19 7 0
+ spin1final_state 20 7.58 0
+ spin1final_state 21 8.31 0
+ spin1final_state 22 8.41 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.9 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 15.7 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 22.3 0
+
+ k-points121(128): 0 0.13 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -7.83 0
+ spin1final_state 6 -7.4 0
+ spin1final_state 7 -7.05 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.32 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.09 0
+ spin1final_state 12 -5.88 0
+ spin1final_state 13 2.3 0
+ spin1final_state 14 5.04 0
+ spin1final_state 15 5.98 0
+ spin1final_state 16 6.17 0
+ spin1final_state 17 6.23 0
+ spin1final_state 18 6.53 0
+ spin1final_state 19 6.98 0
+ spin1final_state 20 7.26 0
+ spin1final_state 21 7.36 0
+ spin1final_state 22 9.27 0
+ spin1final_state 23 12.5 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.5 0
+ spin1final_state 27 14 0
+ spin1final_state 28 15 0
+ spin1final_state 29 15.3 0
+ spin1final_state 30 16.1 0
+ spin1final_state 31 21.2 0
+ spin1final_state 32 21.9 0
+
+ k-points122(128): 0.0652 0.13 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.66 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.14 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.28 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.97 0
+ spin1final_state 12 -5.86 0
+ spin1final_state 13 2.18 0
+ spin1final_state 14 5.09 0
+ spin1final_state 15 5.44 0
+ spin1final_state 16 5.5 0
+ spin1final_state 17 6.33 0
+ spin1final_state 18 6.74 0
+ spin1final_state 19 6.76 0
+ spin1final_state 20 7.28 0
+ spin1final_state 21 8.29 0
+ spin1final_state 22 8.5 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.3 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.6 0
+ spin1final_state 31 21.7 0
+ spin1final_state 32 21.8 0
+
+ k-points123(128): 0.13 0.13 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.48 0
+ spin1final_state 6 -7.48 0
+ spin1final_state 7 -7.22 0
+ spin1final_state 8 -6.27 0
+ spin1final_state 9 -6.25 0
+ spin1final_state 10 -6.05 0
+ spin1final_state 11 -5.86 0
+ spin1final_state 12 -5.86 0
+ spin1final_state 13 1.96 0
+ spin1final_state 14 4.86 0
+ spin1final_state 15 5.73 0
+ spin1final_state 16 5.78 0
+ spin1final_state 17 5.78 0
+ spin1final_state 18 6.78 0
+ spin1final_state 19 6.93 0
+ spin1final_state 20 7.07 0
+ spin1final_state 21 7.07 0
+ spin1final_state 22 9.09 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.7 0
+ spin1final_state 25 12.7 0
+ spin1final_state 26 13.1 0
+ spin1final_state 27 14.7 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.7 0
+ spin1final_state 30 15.8 0
+ spin1final_state 31 21.3 0
+ spin1final_state 32 23.2 0
+
+ k-points124(128): 0.195 0.13 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.66 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.14 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.28 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.97 0
+ spin1final_state 12 -5.86 0
+ spin1final_state 13 2.18 0
+ spin1final_state 14 5.09 0
+ spin1final_state 15 5.44 0
+ spin1final_state 16 5.5 0
+ spin1final_state 17 6.33 0
+ spin1final_state 18 6.74 0
+ spin1final_state 19 6.76 0
+ spin1final_state 20 7.28 0
+ spin1final_state 21 8.29 0
+ spin1final_state 22 8.5 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.3 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.6 0
+ spin1final_state 31 21.7 0
+ spin1final_state 32 21.8 0
+
+ k-points125(128): 0 0.195 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.6 0
+ spin1final_state 5 -8.05 0
+ spin1final_state 6 -7.42 0
+ spin1final_state 7 -7.04 0
+ spin1final_state 8 -6.34 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.3 0
+ spin1final_state 11 -6.15 0
+ spin1final_state 12 -5.92 0
+ spin1final_state 13 2.43 0
+ spin1final_state 14 5.24 0
+ spin1final_state 15 5.77 0
+ spin1final_state 16 5.84 0
+ spin1final_state 17 6.85 0
+ spin1final_state 18 6.85 0
+ spin1final_state 19 7.27 0
+ spin1final_state 20 7.5 0
+ spin1final_state 21 7.64 0
+ spin1final_state 22 8.4 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 13.5 0
+ spin1final_state 26 14 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.7 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 16.4 0
+ spin1final_state 31 20.1 0
+ spin1final_state 32 22 0
+
+ k-points126(128): 0.0652 0.195 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.85 0
+ spin1final_state 6 -7.43 0
+ spin1final_state 7 -7.09 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.27 0
+ spin1final_state 11 -6.03 0
+ spin1final_state 12 -5.89 0
+ spin1final_state 13 2.31 0
+ spin1final_state 14 5.2 0
+ spin1final_state 15 5.43 0
+ spin1final_state 16 5.83 0
+ spin1final_state 17 6.49 0
+ spin1final_state 18 6.53 0
+ spin1final_state 19 7 0
+ spin1final_state 20 7.58 0
+ spin1final_state 21 8.31 0
+ spin1final_state 22 8.41 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.9 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 15.7 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 22.3 0
+
+ k-points127(128): 0.13 0.195 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.66 0
+ spin1final_state 6 -7.44 0
+ spin1final_state 7 -7.14 0
+ spin1final_state 8 -6.31 0
+ spin1final_state 9 -6.28 0
+ spin1final_state 10 -6.2 0
+ spin1final_state 11 -5.97 0
+ spin1final_state 12 -5.86 0
+ spin1final_state 13 2.18 0
+ spin1final_state 14 5.09 0
+ spin1final_state 15 5.44 0
+ spin1final_state 16 5.5 0
+ spin1final_state 17 6.33 0
+ spin1final_state 18 6.74 0
+ spin1final_state 19 6.76 0
+ spin1final_state 20 7.28 0
+ spin1final_state 21 8.29 0
+ spin1final_state 22 8.5 0
+ spin1final_state 23 12.4 0
+ spin1final_state 24 12.6 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.3 0
+ spin1final_state 27 14.1 0
+ spin1final_state 28 15.1 0
+ spin1final_state 29 15.6 0
+ spin1final_state 30 15.6 0
+ spin1final_state 31 21.7 0
+ spin1final_state 32 21.8 0
+
+ k-points128(128): 0.195 0.195 0.183
+ spin1final_state 1 -47.5 0
+ spin1final_state 2 -23.8 0
+ spin1final_state 3 -23.7 0
+ spin1final_state 4 -23.7 0
+ spin1final_state 5 -7.85 0
+ spin1final_state 6 -7.43 0
+ spin1final_state 7 -7.09 0
+ spin1final_state 8 -6.33 0
+ spin1final_state 9 -6.31 0
+ spin1final_state 10 -6.27 0
+ spin1final_state 11 -6.03 0
+ spin1final_state 12 -5.89 0
+ spin1final_state 13 2.31 0
+ spin1final_state 14 5.2 0
+ spin1final_state 15 5.43 0
+ spin1final_state 16 5.83 0
+ spin1final_state 17 6.49 0
+ spin1final_state 18 6.53 0
+ spin1final_state 19 7 0
+ spin1final_state 20 7.58 0
+ spin1final_state 21 8.31 0
+ spin1final_state 22 8.41 0
+ spin1final_state 23 12.1 0
+ spin1final_state 24 12.5 0
+ spin1final_state 25 12.9 0
+ spin1final_state 26 13.9 0
+ spin1final_state 27 14.3 0
+ spin1final_state 28 14.9 0
+ spin1final_state 29 15.5 0
+ spin1final_state 30 15.7 0
+ spin1final_state 31 20.8 0
+ spin1final_state 32 22.3 0
+
+
+
+
+
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ |                                                                    |
+ | POLARIZATION CALCULATION:                                          |
+ |                  Modern Theory of Polarization                     |
+ | calculate the Macroscopic polarization of a crystalline insulator  |
+ | by using Berry Phase method.                                       |
+ |                                                                    |
+ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+ VALUES OF POLARIZATION
+
+  The Ionic Phase:   -0.10600
+ Electronic Phase:    0.92508
+
+The calculated polarization direction is in R3 direction
+
+ P =    7.4095195  (mod   18.0922373)  (   0.0000000,   0.0000000,   7.4095195) (e/Omega).bohr
+
+ P =    0.0155792  (mod    0.0380407)  (   0.0000000,   0.0000000,   0.0155792) e/bohr^2
+
+ P =    0.8906925  (mod    2.1748536)  (   0.0000000,   0.0000000,   0.8906925) C/m^2
+
+
+
+ --------------------------------------------
+ !FINAL_ETOT_IS 0.0000000000000000 eV
+ --------------------------------------------
+
+
+
+
+
+
+  |CLASS_NAME---------|NAME---------------|TIME(Sec)-----|CALLS----|AVG------|PER%-------
+                                      total       16.56302         9      1.84    100.00%
+                 Driver         driver_line       16.53214         1     16.53     99.81%
+            NOrbital_Lm       extra_uniform        0.31007       661      0.00      1.87%
+            ORB_control      set_orb_tables        4.35984         1      4.36     26.32%
+         ORB_gen_tables          gen_tables        4.35983         1      4.36     26.32%
+          ORB_table_phi          init_Table        1.57067         1      1.57      9.48%
+          ORB_table_phi      cal_ST_Phi12_R        4.91922      2405      0.00     29.70%
+         ORB_table_beta     init_Table_Beta        2.62140         1      2.62     15.83%
+         ORB_table_beta       VNL_PhiBeta_R        2.58689       542      0.00     15.62%
+        ESolver_KS_LCAO    othercalculation       11.93341         1     11.93     72.05%
+            HSolverLCAO               solve        5.77848         1      5.78     34.89%
+             HamiltLCAO            updateHk        5.09819       128      0.04     30.78%
+           OperatorLCAO                init        5.09783       384      0.01     30.78%
+                   Veff        contributeHk        2.29781       128      0.02     13.87%
+         Gint_interface            cal_gint        2.13445         1      2.13     12.89%
+                 Gint_k        folding_vl_k        0.13894       128      0.00      0.84%
+   Nonlocal<OperatorLCAO>        contributeHR        1.15354         1      1.15      6.96%
+        LCAO_gen_fixedHbuild_Nonlocal_mu_new        1.15322         1      1.15      6.96%
+           OperatorLCAO       folding_fixed        1.45388       128      0.01      8.78%
+               LCAO_nnr      folding_fixedH        1.45065       128      0.01      8.76%
+            HSolverLCAO     hamiltSolvePsiK        0.67312       128      0.01      4.06%
+              DiagoElpa          elpa_solve        0.62758       128      0.00      3.79%
+ ----------------------------------------------------------------------------------------
+
+ CLASS_NAME---------|NAME---------------|MEMORY(MB)--------
+                                         54537.6976
+        ORB_table_phi               Jl(x)       163.0062
+        ORB_table_phi         Table_SR&TR         9.1782
+        allocate_pvpR        pvpR_reduced         3.8672
+  LocalOrbital_Charge      Density_Matrix         3.8672
+       ORB_table_beta            Table_NR         3.1723
+        init_meshball        meshball_pos         1.8591
+        Grid_Meshcell        index2normal         1.4348
+        Grid_Meshcell         index2ucell         1.4348
+ ----------------------------------------------------------
+
+ Start  Time  : Tue Dec  6 09:51:51 2022
+ Finish Time  : Tue Dec  6 09:52:08 2022
+ Total  Time  : 0 h 0 mins 17 secs 

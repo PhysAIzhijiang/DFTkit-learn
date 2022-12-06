@@ -10,23 +10,26 @@
 
 ---
 
-## 官方解释:
-所在路径: `$ABACUSROOT/examples/band/README`
+## 官方解释(请仔细阅读):
+- 例子介绍: `$ABACUSROOT/examples/band/README`
+    These examples show how to calculate the bands structures.
+    It requires two steps of calculation:
+    1. Do the scf calculation and output the information of charge:
+       - set 'calculation' to 'scf'
+       - set 'out_chg' to '1'
+    2. Do the nscf calculation and output the information of band:
+       - set 'calculation' to 'nscf'
+       - set 'init_chg' to 'file'
+       - set 'out_band' to '1'
+       - set 'pw_diag_thr' to a suitable value when basis_type is 'pw'
+    
+    Generally, in step 2, the KPT file has the 'LINE' mode (an example is lcao_Si2/KLINES)
+    to calculate a series of specified k points.  
 
-These examples show how to calculate the bands structures.
-It requires two steps of calculation:
-1. Do the scf calculation and output the information of charge:
-   - set 'calculation' to 'scf'
-   - set 'out_chg' to '1'
-2. Do the nscf calculation and output the information of band:
-   - set 'calculation' to 'nscf'
-   - set 'init_chg' to 'file'
-   - set 'out_band' to '1'
-   - set 'pw_diag_thr' to a suitable value when basis_type is 'pw'
-Generally, in step 2, the KPT file has the 'LINE' mode (an example is lcao_Si2/KLINES)
-to calculate a series of specified k points.  
+    Finish! Then you can see BANDS_1.dat in OUT.ABACUS. Plot it!
 
-Finish! Then you can see BANDS_1.dat in OUT.ABACUS. Plot it!
+- [>>参数设置与输出文件解释<<](https://abacus.deepmodeling.com/en/latest/advanced/elec_properties/band.html)
+  
 
 ## 运行 (讲解)
 
@@ -101,6 +104,7 @@ Finish! Then you can see BANDS_1.dat in OUT.ABACUS. Plot it!
 - 程序一共运行了两次, 第一次是对Si2系统进行DFT自洽迭代计算基态信息(密度, 能量等)
   ![](./Si2.png)
 - 第二次运行, 根据`KLINES`提供的`k`路径计算能带, 并把每条路径上的能带输入到`OUT.ABACUS/BANDS_1.dat`中.
+
   
   
 在`OUT.ABACUS/running_scf.log`中可以找到费米能的信息:`EFERMI = 6.585653952033698 eV`.

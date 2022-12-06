@@ -10,20 +10,21 @@
 
 ---
 
-## 官方解释:
-所在路径: `$ABACUSROOT/examples/berryphase/README`
+## 官方解释(请仔细阅读):
+- 例子介绍: `$ABACUSROOT/examples/berryphase/README`
+    These examples show how to use Berry phase method.
+    It requires two steps of calculation:
+    1. Do the scf calculation and output the information of charge:
+        - set 'calculation' to 'scf'
+        - set 'out_chg' to '1'
+    2. Do the nscf calculation:
+        - set 'calculation' to 'nscf'
+        - set 'init_chg' to 'file'
+        - set 'berry_phase' to '1'
+        - set 'gdir' to '1' (or '2', or '3')
+        - set 'pw_diag_thr' to a suitable value when basis_type is 'pw'
 
-These examples show how to use Berry phase method.
-It requires two steps of calculation:
-1. Do the scf calculation and output the information of charge:
-    - set 'calculation' to 'scf'
-    - set 'out_chg' to '1'
-2. Do the nscf calculation:
-    - set 'calculation' to 'nscf'
-    - set 'init_chg' to 'file'
-    - set 'berry_phase' to '1'
-    - set 'gdir' to '1' (or '2', or '3')
-    - set 'pw_diag_thr' to a suitable value when basis_type is 'pw'
+- [>>参数设置与输出文件解释<<](https://abacus.deepmodeling.com/en/latest/advanced/elec_properties/Berry_phase.html)
 
 ## 运行 (讲解)
 
