@@ -25,3 +25,7 @@ ABACUS (Atomic-orbital Based Ab-initio Computation at UStc) is an open-source co
 
 - [安装说明](./01_install.md)
 - [运行指南与例子](./02_example.md)
+  - Band 
+    - 使用`lcao`轨道计算Si2能带. [>>点击查看<<](./example_ref/band/lcao_Si2/README.md)
+  - Berry Phase 
+    - 使用`lcao`轨道计算PbTiO3极化. [>>点击查看<<](./example_ref/berryphase/lcao_PbTiO3/README.md)
