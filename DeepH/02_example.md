@@ -7,7 +7,7 @@
 虽然DeepH可以支持多款DFT计算软件, 但是demo里提供的数据和流程并不是对所有支持的DFT软件通用.
 本指南将选取计算碳二维晶体的递进流程(石墨烯$\to$转角石墨烯$\to$任意石墨超胞)来讲解DeepH如何使用方法.
 
-## 碳二维晶体的计算
+## 二维晶体碳的计算
 
 ### 石墨烯
 该部分教程[参考DeepH官方指南:demo](https://deeph-pack.readthedocs.io/en/latest/demo/demo2.html)
