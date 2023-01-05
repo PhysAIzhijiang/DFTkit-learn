@@ -24,4 +24,4 @@ DeepH-pack is a package for the application of deep neural networks to the predi
 
 - [安装说明](./01_install.md)
 - [运行指南与例子](./02_example.md)
-  - 二维晶体碳的计算
+  - 石墨管道

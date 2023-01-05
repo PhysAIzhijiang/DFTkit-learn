@@ -1,0 +1,5 @@
+{
+  "calc_job": "band",
+  "fermi_level": -2.4,
+  "k_data": ["60 0 0 0 0 0 0.5 Γ Z"]
+}

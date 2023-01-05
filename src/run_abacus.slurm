@@ -49,6 +49,8 @@
 #SBATCH -q short
 ## time format day-hour:minute:second
 #SBATCH --time=00-00:30:00
+## group the tasks
+## #SBATCH -a 0-2
 
 #|=======================================
 #| start to set your environment for your job
@@ -89,8 +91,8 @@ export MKL_NUM_THREADS=$omp_threads
 #|=======================================
 #| start to run your job
 #|---------------------------------------
-rm Slurm-* ;
-rm slurm-* ;
+# rm Slurm-* ;
+# rm slurm-* ;
 
 #|=======================================
 # run ABAUCUS HERE
