@@ -322,3 +322,5 @@ The Hamiltonian and overlao matrix are stored like "H_R[R], S_R[R]", "R" is Latt
 下载 wget https://raw.githubusercontent.com/certik/openmx/master/src/bandgnu13.c
 安装 gcc -lm bandgnu13.c -o bandgnu13
 app/bandgnu/bandgnu13 prediction/openmx.Band -> openmx.GNUBAND
+sed -i "s/data s l/set style data lines/g" openmx.GNUBAND
+gnuplot openmx.GNUBAND
