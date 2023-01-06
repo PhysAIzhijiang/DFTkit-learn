@@ -109,6 +109,12 @@ Prepare the Python 3.9 interpreter. Install the following Python packages requir
         继续等`Collecting package metadata (repodata.json)`检索完, 会解决环境问题, 完成安装.
 
         目前是什么原因未知.
+    
+    - 错误
+      - `module 'distutils' has no attribute 'version'`
+        ``` bash
+            $ pip install setuptools==59.5.0
+        ```
 
 
 - 安装deepH
@@ -144,6 +150,9 @@ Prepare the Python 3.9 interpreter. Install the following Python packages requir
         ```
 
     ​
+- 安装Julia 
+    参考[runoob教程](https://www.runoob.com/julia/julia-environment.html)
+    我们只需要下载后解压缩在本地就可以
 
 ## 环境版本
 最后把我安装好后的各个包的版本列出来供参考.
