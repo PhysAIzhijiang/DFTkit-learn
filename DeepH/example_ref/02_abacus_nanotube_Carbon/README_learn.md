@@ -169,7 +169,7 @@ DeepH已经给我们提供了`get_dataset.py`程序, 该程序读取石墨烯的
   multiprocessing = 16
 
   [interpreter]
-  julia_interpreter = /sharedata01/shengbi/app/julia-1.7.2/bin/julia
+  julia_interpreter = "JULIA_DEPOT_PATH=/sharedata01/shengbi/app/julia/.pkg_1.8.4; /sharedata01/shengbi/app/julia/1.8.4/bin/julia"
 
   [graph]
   radius = 
@@ -295,7 +295,7 @@ disable_cuda = True
 huge_structure = False
 
 [interpreter]
-julia_interpreter = /sharedata01/shengbi/app/julia-1.7.2/bin/julia
+julia_interpreter = "JULIA_DEPOT_PATH=/sharedata01/shengbi/app/julia/.pkg_1.8.4; /sharedata01/shengbi/app/julia/1.8.4/bin/julia"
 
 [graph]
 radius = -1.0
@@ -318,3 +318,7 @@ overlaps = _create_dict_h5(joinpath(parsed_args["input_dir"], "overlaps.h5"))
 
 then "construct Hamiltonian and overlap matrix in the real space" ....
 The Hamiltonian and overlao matrix are stored like "H_R[R], S_R[R]", "R" is Lattice vectors.
+
+下载 wget https://raw.githubusercontent.com/certik/openmx/master/src/bandgnu13.c
+安装 gcc -lm bandgnu13.c -o bandgnu13
+app/bandgnu/bandgnu13 prediction/openmx.Band -> openmx.GNUBAND

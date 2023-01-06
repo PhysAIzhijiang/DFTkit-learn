@@ -152,7 +152,14 @@ Prepare the Python 3.9 interpreter. Install the following Python packages requir
     ​
 - 安装Julia 
     参考[runoob教程](https://www.runoob.com/julia/julia-environment.html)
-    我们只需要下载后解压缩在本地就可以
+    我们只需要下载后解压缩在本地就可以.
+    安装依赖
+    ``` bash
+    $ JULIA_PKG_SERVER="https://mirrors.tuna.tsinghua.edu.cn/julia";JULIA_DEPOT_PATH=xxxx/julia/1.8.4/bin/julia julia/1.8.4/bin/julia
+    $ julia> using Pkg
+    $ julia> Pkg.add(["DelimitedFiles", "LinearAlgebra", "JSON", "HDF5", "ArgParse", "SparseArrays", "Arpack", "JLD"])
+    ```
+
 
 ## 环境版本
 最后把我安装好后的各个包的版本列出来供参考.
