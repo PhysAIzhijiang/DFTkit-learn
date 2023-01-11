@@ -159,7 +159,9 @@ Prepare the Python 3.9 interpreter. Install the following Python packages requir
     $ julia> using Pkg
     $ julia> Pkg.add(["DelimitedFiles", "LinearAlgebra", "JSON", "HDF5", "ArgParse", "SparseArrays", "Arpack", "JLD"])
     ```
-
+- 安装BANDGUN
+    - 下载程序 https://github.com/certik/openmx/blob/master/src/bandgnu13.c
+    - `icc bandgnu13.c`
 
 ## 环境版本
 最后把我安装好后的各个包的版本列出来供参考.

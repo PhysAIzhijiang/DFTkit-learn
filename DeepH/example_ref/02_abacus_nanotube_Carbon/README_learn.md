@@ -47,10 +47,10 @@
 #### 准备数据
 
 按照官方文档的介绍, 我们需要如下步骤:
-- **Generate the dataset by ABACUS**
-- Preprocess the dataset by DeepH-pack
-- Train the DeepH model
-- Predict the Hamiltonian of (25, 0) carbon nanotube (CNT)
+> - **Generate the dataset by ABACUS**
+> - Preprocess the dataset by DeepH-pack
+> - Train the DeepH model
+> - Predict the Hamiltonian of (25, 0) carbon nanotube (CNT)
 
 这里我们用`ABACUS`产生数据. 
 DeepH已经给我们提供了`get_dataset.py`程序, 该程序读取石墨烯的结构文件`Graphene.cif`.
@@ -151,10 +151,10 @@ DeepH已经给我们提供了`get_dataset.py`程序, 该程序读取石墨烯的
 #### DeepH数据预处理
 
 按照官方文档的介绍, 我们需要如下步骤:
-- Generate the dataset by ABACUS
-- **Preprocess the dataset by DeepH-pack**
-- Train the DeepH model
-- Predict the Hamiltonian of (25, 0) carbon nanotube (CNT)
+> - Generate the dataset by ABACUS
+> - **Preprocess the dataset by DeepH-pack**
+> - Train the DeepH model
+> - Predict the Hamiltonian of (25, 0) carbon nanotube (CNT)
 
 接下来, 我们需要把ABACUS计算的结果转化成DeepH接受的输入格式, 比如局域化的基矢表示. 
 
@@ -169,7 +169,7 @@ DeepH已经给我们提供了`get_dataset.py`程序, 该程序读取石墨烯的
   multiprocessing = 16
 
   [interpreter]
-  julia_interpreter = "JULIA_DEPOT_PATH=/sharedata01/shengbi/app/julia/.pkg_1.8.4; /sharedata01/shengbi/app/julia/1.8.4/bin/julia"
+  julia_interpreter = "julia"
 
   [graph]
   radius = 
@@ -177,20 +177,20 @@ DeepH已经给我们提供了`get_dataset.py`程序, 该程序读取石墨烯的
   ```
 - 创建任务脚本. 
   ``` bash
-  cp ../../../src/run_deeph.slurm  .
+  cp ../../../src/run_deeph.slurm  run_deeph_preprocess.slurm
   ```
-  将脚本中`# srun .....`替换为`deeph-preprocess --config preprocess.ini`
+  将脚本中`# srun .....`替换为`deeph-preprocess --config preprocess.ini > preprocess.log`
   **另外请注意:**
   脚本中`#SBATCH --ntasks-per-node=16`要和`preprocess.ini`文件中`multiprocessing = 16`设置的核数一致.
 
 - 运行
   ```bash
-  sbatch run_deeph.slurm
+  sbatch run_deeph_preprocess.slurm
   ```
   大概需要20分钟.
   在`slurm`输出的结果里可以看到`Preprocess finished`字样.
 
-  (BS: 在`processed_dir`里少于400个文件夹, 不知道是否争取正确)
+  (BS: 在`processed_dir`里少于400个文件夹, 不知道是否正确)
 
 #### DeepH数据训练
 
@@ -239,73 +239,89 @@ DeepH model can be trained using the preprocessed dataset. Set up the `graph_dir
 
 - 创建任务脚本.
   ``` bash
-  $ cp run_deeph.slurm run_deeph_2.slurm
-  $ sed -i "s/deeph-preprocess.*/deeph-train --config train.ini/g" run_deeph_2.slurm
+  $ cp run_deeph_preprocess.slurm run_deeph_train.slurm
+  $ sed -i "s/deeph-preprocess.*/deeph-train --config train.ini >> train.log/g" run_deeph_train.slurm
   ```
-  **要注意deepH使用1个进程, 但是占用了32个核. 因为内存消耗量很大.**
+  **要注意deepH使用1个进程, 但是占用了4个核.**
 
 - 运行
   ```bash
-  sbatch run_deeph.slurm
+  sbatch run_deeph_train.slurm
   ```
 
   查看运行进度
   ``` bash
   $ tail -f save_dir/xxxx-xx-xx_xx-xx-xx/result.txt
   ```
-  大致30s可以处理一个训练集.
+  大致30s可以处理一个训练集. 在全部训练集处理后, 开始训练. 
+  训练一个周期需要大概`100`秒, 完成大概需要`138`小时(6天)
 
-
-The trained model can be found in the `save_dir`. The average loss of all orbital pairs is expected to reach `1e-6`.
+  The trained model can be found in the `save_dir`. The average loss of all orbital pairs is expected to reach `1e-6`.
 
 #### DeepH预测
 
 按照官方文档的介绍, 我们需要如下步骤:
-- Generate the dataset by ABACUS
-- Preprocess the dataset by DeepH-pack**
-- Train the DeepH model**
-- **Predict the Hamiltonian of (25, 0) carbon nanotube (CNT)**
+>  - Generate the dataset by ABACUS
+>  - Preprocess the dataset by DeepH-pack
+>  - Train the DeepH model
+>  - **Predict the Hamiltonian of (25, 0) carbon nanotube (CNT)**
 
-Firstly, you should compute the overlap matrix of the carbon nanotube without scf calculation. Run
-```bash
-python calc_OLP_of_CNT.py
-```
-to get ABACUS input files in `olp_CNT` and perform overlap calculation by ABACUS. ABACUS version >= 2.3.2 is required.
 
-``` bash
-$ cp ../../../src/run_abacus.slurm / olp_CNT/
-$ sed -i 
-$ sbatch run
-```
+- 计算carbon nanotube交叠矩阵(overlap matrix)
 
-Then predict the DFT Hamiltonian and calculation the band structure. Set up the `work_dir`, `OLP_dir` and `trained_model_dir` for the config file `inference.ini`. `work_dir` is the directory where you want to store the prediction results. `OLP_dir` is the directory of your overlap calculation of CNT. `trained_model_dir` needs to be set to the directory where you store the output files of training (`best_model.pt` file).
+  - 产生carbon nanotube需要的输入文件
 
-编辑`inference.ini`
+    ```bash
+    python calc_OLP_of_CNT.py
+    ```
+    Get ABACUS input files in `olp_CNT` and perform overlap calculation by ABACUS. ABACUS version >= 2.3.2 is required.
+  - 运行ABACUS
+    ``` bash
+    $ cp ../../../src/run_abacus.slurm / olp_CNT/
+    $ sed -i "s/# srun ...../srun ${ABACUS_PATH} > scf.output/g" olp_CNT/run_abacus.slurm
+    $ cd olp_CNT;
+    $ sbatch run_abacus.slurm;
+    ```
 
-``` ini
-[basic]
-work_dir = ./prediction
-OLP_dir = ./olp_CNT
-interface = abacus
-trained_model_dir = ./save_dir/xxxx-xx-xx_xx-xx-xx/
-task = [1, 2, 3, 4, 5]
-sparse_calc_config = ./abacus_CNT.json
-dense_calc = True
-disable_cuda = True
-huge_structure = False
+- 编辑deepH配置文件`inference.ini`
+  
+  Then predict the DFT Hamiltonian and calculation the band structure. Set up the `work_dir`, `OLP_dir` and `trained_model_dir` for the config file `inference.ini`. `work_dir` is the directory where you want to store the prediction results. `OLP_dir` is the directory of your overlap calculation of CNT. `trained_model_dir` needs to be set to the directory where you store the output files of training (`best_model.pt` file).
 
-[interpreter]
-julia_interpreter = "JULIA_DEPOT_PATH=/sharedata01/shengbi/app/julia/.pkg_1.8.4; /sharedata01/shengbi/app/julia/1.8.4/bin/julia"
+  ``` ini
+  [basic]
+  work_dir = ./prediction/xxxx-xx-xx_xx-xx-xx
+  OLP_dir = ./olp_CNT
+  interface = abacus
+  trained_model_dir = ./save_dir/xxxx-xx-xx_xx-xx-xx
+  task = [1, 2, 3, 4, 5]
+  sparse_calc_config = ./abacus_CNT.json
+  dense_calc = True
+  disable_cuda = True
+  huge_structure = False
 
-[graph]
-radius = -1.0
-create_from_DFT = True
+  [interpreter]
+  julia_interpreter = "julia"
 
-```
+  [graph]
+  radius = -1.0
+  create_from_DFT = True
 
-```bash
-deeph-inference --config inference.ini
-```
+  ```
+
+- 运行deepH`inference`模块
+  
+  ``` bash
+  $ cp run_deeph_preprocess.slurm run_deeph_inference.slurm
+  $ sed -i "s/deeph-preprocess.*/deeph-inference --config inference.ini > inference.log/g" run_deeph_inference.slurm
+  ```
+  使用1个核.
+
+  提交任务
+  ``` bash
+  $ sbatch run_deeph_inference.slurm
+  ```
+
+  进度输出在`slurm-xxxx.out`文件
 
 #### 结果分析
 
@@ -319,8 +335,32 @@ overlaps = _create_dict_h5(joinpath(parsed_args["input_dir"], "overlaps.h5"))
 then "construct Hamiltonian and overlap matrix in the real space" ....
 The Hamiltonian and overlao matrix are stored like "H_R[R], S_R[R]", "R" is Lattice vectors.
 
-下载 wget https://raw.githubusercontent.com/certik/openmx/master/src/bandgnu13.c
-安装 gcc -lm bandgnu13.c -o bandgnu13
-app/bandgnu/bandgnu13 prediction/openmx.Band -> openmx.GNUBAND
-sed -i "s/data s l/set style data lines/g" openmx.GNUBAND
-gnuplot openmx.GNUBAND
+- 画图
+程序会生成能带数据`openmx.Band`, 该文件以`OpenMX`格式储存的.
+使用`OpenMX`的组件`bandgnu13`可以生成`gnuplot`画图脚本`openmx.GNUBAND`.
+``` bash
+$ bandgnu13 openmx.Band 
+$ gnuplot openmx.GNUBAND
+```
+如果遇到如下报错,
+``` bash
+set data s l
+    ^
+"openmx.GNUBAND", line 1: Unrecognized option.  See 'help set'.
+```
+ 可能因为默认的`gnuplot`版本太老, 我们需要对其进行轻微的修改:
+ ``` bash
+$ sed -i "s/set data s l/set style data lines/g" openmx.GNUBAND
+# 再次画图
+$ gnuplot openmx.GNUBAND
+```
+
+修改画图参数
+``` bash
+# 修改能量范围
+# set yra [-306.101965:387.325594]
+set yra [-6.101965:6.325594]
+# 保存到图片
+set terminal png size 400,300; set output 'pred.png'
+#pause -1
+```
