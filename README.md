@@ -14,6 +14,9 @@ language support: **Chinese only**
 ### NOMAD@FHI
 - [FHI-aims ](./FHI-aims/README.md)
 
+### Kwant
+- [Kwant ](./Kwant/README.md)
+
 ### Quantum ESPRESSO (planning)
 
 ### Wannier90 (planning)
