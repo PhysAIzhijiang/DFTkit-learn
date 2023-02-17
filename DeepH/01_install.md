@@ -88,30 +88,34 @@ Prepare the Python 3.9 interpreter. Install the following Python packages requir
 
 
 - 安装deeph依赖包
-    - 安装数学相关
+    - 安装数学/物理相关
     ```
-    (deeph) $ conda install numpy scipy 
+    (deeph) $ conda install numpy 
+    (deeph) $ conda install -y pymatgen -c conda-forge
+    (deeph) $ conda install -y scipy
     ```
+
+    这里要注意, `pymatgen`要在`scipy`之前安装. 因为`pymatgen`对`scipy`有特殊版本需求, 先安装`scipy`可能会导致`pymatgen`版本依赖错误.
+    
+    另外, 安装过程可能会等很久还会报错.
+    ``` bash
+    Collecting package metadata (current_repodata.json): done
+    Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+    Collecting package metadata (repodata.json):
+    ```
+    继续等`Collecting package metadata (repodata.json)`检索完, 会解决环境问题, 完成安装.
+
+
     - 安装pytorch相关
         ```
-        (deeph) $ conda install -y numpy scipy 
         (deeph) $ conda install -y pytorch==1.9.1 torchvision==0.10.1 torchaudio==0.9.1 cpuonly -c pytorch
         (deeph) $ conda install -y pytorch-geometric=1.7.2 -c rusty1s -c conda-forge
-        (deeph) $ conda install -y pymatgen -c conda-forge
         ```
-
-        这里要注意, 安装`pytorch`过程可能会报错.
-        ``` bash
-        Collecting package metadata (current_repodata.json): done
-        Solving environment: failed with initial frozen solve. Retrying with flexible solve.
-        Collecting package metadata (repodata.json):
-        ```
-        继续等`Collecting package metadata (repodata.json)`检索完, 会解决环境问题, 完成安装.
-
-        目前是什么原因未知.
+        其他版本可以参考`https://pytorch.org/get-started/previous-versions/`.
     
-    - 错误
+    - 在之后运行程序的时候碰到过错误:
       - `module 'distutils' has no attribute 'version'`
+      - 安装`setuptools==59.5.0`可以解决, 高版本不存在`version`函数.
         ``` bash
             $ pip install setuptools==59.5.0
         ```
@@ -155,7 +159,7 @@ Prepare the Python 3.9 interpreter. Install the following Python packages requir
     我们只需要下载后解压缩在本地就可以.
     安装依赖
     ``` bash
-    $ JULIA_PKG_SERVER="https://mirrors.tuna.tsinghua.edu.cn/julia";JULIA_DEPOT_PATH=xxxx/julia/1.8.4/bin/julia julia/1.8.4/bin/julia
+    $ export JULIA_PKG_SERVER="https://mirrors.tuna.tsinghua.edu.cn/julia";export JULIA_DEPOT_PATH=xxxx/julia/depot/1.8.4/deeph; xxxx/julia/1.8.4/bin/julia
     $ julia> using Pkg
     $ julia> Pkg.add(["DelimitedFiles", "LinearAlgebra", "JSON", "HDF5", "ArgParse", "SparseArrays", "Arpack", "JLD"])
     ```
