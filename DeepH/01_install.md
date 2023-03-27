@@ -11,10 +11,9 @@ deepH : https://deeph-pack.readthedocs.io/
 使用`module load`指令.
 
 #### install
-    ​``` bash
-    $ module load conda/miniconda
-    ​``` 
-
+​``` bash
+$ module load conda/miniconda
+​``` 
 
 ### 具体版本
 - CPU: Intel Xeon Processor (Skylake, IBRS)
@@ -56,8 +55,58 @@ deepH : https://deeph-pack.readthedocs.io/
     ```
 
     建议使用清华源: https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/
+    ``` text
+    channels:
+    - defaults
+    show_channel_urls: true
+    default_channels:
+    - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+    - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+    custom_channels:
+    conda-forge: https://mirror.sjtu.edu.cn/anaconda/cloud/
+    msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+    bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+    menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+    pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+    pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+    simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+    ```
 
-## 依赖关系
+## 安装依赖
+
+### 创建虚拟环境
+
+#### use Pip 
+- 临时使用
+    ``` bash
+    pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+    ```
+- 设为默认
+    ```
+    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+    ```
+- 创建python virtual-environment
+    ``` bash
+    python3 -m venv ./deeph
+    ``` 
+- 激活环境
+    ``` bash
+    source deeph/bin/activate
+    ```
+
+#### use conda
+
+- 创建conda环境
+    ``` bash
+    conda create -n deeph python=3.9
+    ```
+- 激活环境
+    ``` bash
+    conda activate deeph
+    ```
+
+### 安装依赖关系
 Prepare the Python 3.9 interpreter. Install the following Python packages required:
 - NumPy
 - SciPy
@@ -70,100 +119,138 @@ Prepare the Python 3.9 interpreter. Install the following Python packages requir
 - pathos
 - psutil
 
+#### conda install
+**注意** : 如果只使用CPU, 没有显卡进行GPU加速, 可以使用conda进行安装, 指令简单.
+``` bash
+# install packages by conda
+$ conda install numpy
+$ conda install scipy
+$ conda install pytorch==1.9.1 ${pytorch_config}
+$ conda install pytorch-geometric=1.7.2 -c rusty1s -c conda-forge
+$ conda install pymatgen -c conda-forge
+# 解决错误: `module 'distutils' has no attribute 'version'`
+$ pip install setuptools==59.5.0
+```
 
+#### pip install
+**注意** : 
+- 如果使用GPU进行加速, 那么强烈建议使用pip进行安装, 因为PyTorch Geometric对torch版本的依赖非常敏感, conda会导致依赖错误.
+- 建议使用清华源 pip install xxx -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 
-## 编译
-这里我们选取用conda安装的方式, 其他安装方式请参考官方网站.
+##### 安装数学相关
+``` bash
+(deeph) $ pip install numpy scipy
+```
 
-- 创建conda环境
+##### 安装pytorch相关
+根据deepH官方要求, 我们选择1.9.1版本.
+``` bash
+# CUDA 11.1
+(deeph) $ pip install torch==1.9.1+cu111 torchvision==0.10.1+cu111 torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html
 
+# CUDA 10.2
+(deeph) $ pip install torch==1.9.1+cu102 torchvision==0.10.1+cu102 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+
+# CPU only
+(deeph) $ pip install torch==1.9.1+cpu torchvision==0.10.1+cpu torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html
+```
+
+其他版本可以参考`https://pytorch.org/get-started/previous-versions/`.
+
+##### 安装torch-geometric相关
+``` bash
+# 获取torch版本
+(deeph) $ TORCH=$(python -c "import torch; print(torch.__version__)")
+(deeph) $ echo $TORCH
+1.9.1+cu111
+(deeph) $ pip install torch_scatter==2.0.9 torch_sparse==0.6.12 torch_cluster==1.5.9 torch_spline_conv==1.2.1 -f https://data.pyg.org/whl/torch-${TORCH}.html
+(deeph) $ pip install torch-geometric==1.7.2 -f https://data.pyg.org/whl/torch-${TORCH}.html
+```
+如果遇到错误`module 'distutils' has no attribute 'version'`
+``` bash
+$ pip install setuptools==59.5.0
+```
+
+##### 安装pymatgen
+``` bash
+# python3.8
+(deeph) $ pip install pymatgen==2020.8.3 
+# python 3.9
+(deeph) $ pip install pymatgen
+```
+遇到错误
+``` bash
+fatal error: Python.h: No such file or directory compilation terminated.
+```
+需要python-dev
+
+``` bash
+(deeph) $ pip install python-dev-tools
+```
+
+##### 非必要安装
+下面这些库在安装deepH的时候会自动安装.
+``` bash
+(deeph) $ pip install e3nn==0.3.5 h5py tensorboard pathos psutil
+```
+
+## 安装deepH
+
+- 下载源码:
     ``` bash
-    conda create -n deeph python=3.9
-    ```
-- 激活环境
-
-    ```
-    conda activate deeph
-    ```
-
-
-- 安装deeph依赖包
-    - 安装数学/物理相关
-    ```
-    (deeph) $ conda install numpy 
-    (deeph) $ conda install -y pymatgen -c conda-forge
-    (deeph) $ conda install -y scipy
+    $ cd xxx/apps;
+    $ mkdir deeph;
+    $ cd deeph
+    $ git clone https://github.com/mzjb/DeepH-pack.git
+    $ version=$(cd DeepH-pack; git log -n1 --format="%h")
+    $ echo "The last commit is $version"
+    $ mv DeepH-pack $version;
     ```
 
-    这里要注意, `pymatgen`要在`scipy`之前安装. 因为`pymatgen`对`scipy`有特殊版本需求, 先安装`scipy`可能会导致`pymatgen`版本依赖错误.
-    
-    另外, 安装过程可能会等很久还会报错.
+    目前(2022.11)最新版本是`dd44e70`.
+
+- 安装
+
+    注意: **如果想使用python3.8**, 需要修改`setup.py`文件
+    ``` python
+    python_requires=">=3.9",
+    ```
+    修改为
+    ``` python
+    python_requires=">=3.8",
+    ```
+
+    开始安装:
     ``` bash
-    Collecting package metadata (current_repodata.json): done
-    Solving environment: failed with initial frozen solve. Retrying with flexible solve.
-    Collecting package metadata (repodata.json):
+    # 进入到之前安装好的环境, 里面包含了pytorch
+    $ conda activate deeph
+    # 安装pip
+    $ conda list pip
+    # 获取env目录
+    $ envPath=$(conda info --env | grep ^deeph | awk '{print $3}')
+    $ pipPath=$envPath/bin/pip
+    # 安装deeph
+    $ $pipPath install . 
+    # 检查安装
+    $ whereis deeph-preprocess
+    deeph-preprocess: xxx/conda/envs/deeph/bin/deeph-preprocess
+    # 找到了deeph-preprocess执行文件说明安装成功了.
     ```
-    继续等`Collecting package metadata (repodata.json)`检索完, 会解决环境问题, 完成安装.
 
-
-    - 安装pytorch相关
-        ```
-        (deeph) $ conda install -y pytorch==1.9.1 torchvision==0.10.1 torchaudio==0.9.1 cpuonly -c pytorch
-        (deeph) $ conda install -y pytorch-geometric=1.7.2 -c rusty1s -c conda-forge
-        ```
-        其他版本可以参考`https://pytorch.org/get-started/previous-versions/`.
-    
-    - 在之后运行程序的时候碰到过错误:
-      - `module 'distutils' has no attribute 'version'`
-      - 安装`setuptools==59.5.0`可以解决, 高版本不存在`version`函数.
-        ``` bash
-            $ pip install setuptools==59.5.0
-        ```
-
-
-- 安装deepH
-    - 下载源码:
-        ``` bash
-        $ cd xxx/apps;
-        $ mkdir deeph;
-        $ cd deeph
-        $ git clone https://github.com/mzjb/DeepH-pack.git
-        $ version=$(cd DeepH-pack; git log -n1 --format="%h")
-        $ echo "The last commit is $version"
-        $ mv DeepH-pack $version;
-        ```
-
-        目前(2022.11)最新版本是`dd44e70`.
-
-    - 安装
-
-        ``` bash
-        # 进入到之前安装好的环境, 里面包含了pytorch
-        $ conda activate deeph
-        # 安装pip
-        $ conda list pip
-        # 获取env目录
-        $ envPath=$(conda info --env | grep ^deeph | awk '{print $3}')
-        $ pipPath=$envPath/bin/pip
-        # 安装deeph
-        $ $pipPath install . 
-        # 检查安装
-        $ whereis deeph-preprocess
-        deeph-preprocess: xxx/conda/envs/deeph/bin/deeph-preprocess
-        # 找到了deeph-preprocess执行文件说明安装成功了.
-        ```
 
     ​
-- 安装Julia 
-    参考[runoob教程](https://www.runoob.com/julia/julia-environment.html)
-    我们只需要下载后解压缩在本地就可以.
-    安装依赖
-    ``` bash
-    $ export JULIA_PKG_SERVER="https://mirrors.tuna.tsinghua.edu.cn/julia";export JULIA_DEPOT_PATH=xxxx/julia/depot/1.8.4/deeph; xxxx/julia/1.8.4/bin/julia
-    $ julia> using Pkg
-    $ julia> Pkg.add(["DelimitedFiles", "LinearAlgebra", "JSON", "HDF5", "ArgParse", "SparseArrays", "Arpack", "JLD"])
-    ```
-- 安装BANDGUN
+## 安装Julia 
+
+参考[runoob教程](https://www.runoob.com/julia/julia-environment.html)
+我们只需要下载后解压缩在本地就可以.
+安装依赖
+``` bash
+$ export JULIA_PKG_SERVER="https://mirrors.tuna.tsinghua.edu.cn/julia";export JULIA_DEPOT_PATH=xxxx/julia/depot/1.8.4/deeph; xxxx/julia/1.8.4/bin/julia
+$ julia> using Pkg
+$ julia> Pkg.add(["DelimitedFiles", "LinearAlgebra", "JSON", "HDF5", "ArgParse", "SparseArrays", "Arpack", "JLD"])
+```
+
+## 安装BANDGUN
     - 下载程序 https://github.com/certik/openmx/blob/master/src/bandgnu13.c
     - `icc bandgnu13.c`
 
